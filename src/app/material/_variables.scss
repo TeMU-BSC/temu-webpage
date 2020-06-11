@@ -1,0 +1,42 @@
+// https://medium.com/@aleixsuau/how-to-use-angular-material-2-sass-variables-in-your-components-76ce0203f126
+
+// Import material theming functions
+@import '~@angular/material/theming';
+
+// Copy the palettes from your selected theme (usually theme.scss).
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-pink);
+$app-warn: mat-palette($mat-red);
+
+$app-success: mat-palette($mat-green);
+$app-info: mat-palette($mat-blue);
+$app-attention: mat-palette($mat-orange, 800);
+$app-secondary: mat-palette($mat-grey);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
+$success: mat-color($app-success);
+$info: mat-color($app-info);
+$attention: mat-color($app-attention);
+$secondary: mat-color($app-secondary);
+
+// https://github.com/angular/components/issues/11888#issuecomment-536509515
+$custom-collection: (
+  success: $success,
+  info: $info,
+  attention: $attention,
+  secondary: $secondary,
+  contrast: (
+    success: mat-contrast($mat-green, 600),
+    info: mat-contrast($mat-blue, 600),
+    attention: mat-contrast($mat-orange, 800),
+    secondary: mat-contrast($mat-grey, 600),
+  )
+);
+$my-app-custom: mat-palette($custom-collection, custom);
+$my-app-theme: mat-light-theme($app-primary, $app-accent, $app-warn); // this row your should have already in your code where you select palettes for primary, accent and warn
+$my-app-theme: map_merge($my-app-theme, (custom: $my-app-custom));
+$custom: map-get($my-app-theme, custom);

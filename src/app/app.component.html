@@ -16,60 +16,156 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="mat-elevation-z4">
-      <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+      <button fxHide.gt-md aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span style="margin-left: .5rem;">TEMU</span>
+      <a href="getAnchorUrl()" class="temu-logo">TEMU</a>
+      <span class="spacer"></span>
+      <mat-nav-list fxHide fxShow.gt-md fxLayout fxLayoutAlign="center center">
+        <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" class="header-links">
+          {{ section.title }}
+        </a>
+      </mat-nav-list>
     </mat-toolbar>
-    <main class="main">
-      <h1 style="font-size: xx-large; font-weight: bold;">
-        <span style="color: #298DAF; font-weight: bold;">Biomedical</span>
+    <main class="main" ngClass.gt-sm="main-desktop">
+      <h1 class="heading">
+        <span class="plantl-color">Biomedical</span>
         <br>
         Text Mining Unit
       </h1>
-      <section fxLayout="column" fxLayout.gt-sm="row" class="section">
-        <div>
-          <img src="assets/images/bsc.png" alt="BSC logo" class="img-mobile" ngClass.gt-sm="img-desktop">
+      <p class="secondary">OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
+      <section fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="center start" fxLayoutGap.gt-sm="5rem"
+        class="section">
+        <div fxFlex.gt-sm="50%">
+          <img src="assets/images/BSC-blue.svg" alt="BSC logo" class="logo" ngClass.gt-sm="logo-desktop">
           <p>
             The Text Mining Unit (TEMU) at Barcelona Super Computing Center focuses on the application and development
-            of
-            biomedical text mining technologies, which are becoming a key tool for the efficient exploitation of
-            information
-            contained in unstructured data repositories including the scientific literature, electronic health records
-            (EHRs), patents, biobank metadata, clinical trials and social media. The unit has a particular interest in
-            processing clinical documents written in Spanish and other co-official languages in the area of
-            health-related
-            topics and the integration of molecular and biological information derived from the literature.
+            of biomedical text mining technologies, which are becoming a key tool for the efficient exploitation of
+            information contained in unstructured data repositories including the scientific literature, electronic
+            health records (EHRs), patents, biobank metadata, clinical trials and social media.
+          </p>
+          <p>
+            The unit has a particular interest in processing clinical documents written in Spanish and other co-official
+            languages in the area of health-related topics and the integration of molecular and biological information
+            derived from the literature.
           </p>
         </div>
-        <div>
-          <img src="assets/images/plantl.png" alt="PlanTL logo" class="img-mobile" ngClass.gt-sm="img-desktop">
+        <div fxFlex.gt-sm="50%">
+          <img src="assets/images/plantl.png" alt="PlanTL logo" class="logo" ngClass.gt-sm="logo-desktop">
           <p>
             The unit is fully funded through the
-            <span class="spanish keyword">Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan
-              TL)</span>,
-            in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC
-            and the Secretary of State of Telecommunications of the Spanish Ministry of Economic Affairs and Digital
-            Transformation.
+            <span class="spanish">
+              Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan TL)
+            </span>,
+            in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC and the
+            <!-- Secretary of State of Telecommunications of the Spanish Ministry of Economic Affairs and Digital Transformation. -->
+            <span class="spanish">Ministerio de Asuntos Económicos y Transformación Digital</span>.
           </p>
         </div>
       </section>
-      <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
-        <h2 class="keyword heading" fxLayoutAlign="start center">
-          <span>{{ section.title }}</span>
-          <button mat-icon-button class="heading-link" [cdkCopyToClipboard]="getAnchorUrl(section.id)"
-            matTooltip="Copy heading link" matTooltipPosition="above">
-            <mat-icon>link</mat-icon>
-          </button>
+      <section class="section">
+        <h2 class="heading">
+          News
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus veniam nulla non dolore. Quaerat
-          excepturi hic possimus accusantium exercitationem. Est vero facere reprehenderit nihil libero ex dolores
-          asperiores provident dolorum! Dolor vero sequi laudantium harum veniam minima voluptatem ullam quod, dolorem
-          quos fuga, sapiente tempore, doloribus sunt mollitia voluptate?
-        </p>
+        <ul>
+          <li>Biomedical Text Mining Unit website launched on December 2018.</li>
+        </ul>
+      </section>
+      <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
+        <h2 class="heading" fxLayoutAlign="start center">
+          <span>{{ section.title }}</span>
+          <a mat-icon-button href="#{{ section.id }}" class="heading-link"
+            [cdkCopyToClipboard]="getAnchorUrl(section.id)" matTooltip="Copy heading link" matTooltipPosition="above">
+            <mat-icon>link</mat-icon>
+          </a>
+        </h2>
+
+        <p *ngIf="section.firstParagraph">{{ section.firstParagraph }}</p>
+        <ul>
+          <li *ngFor="let item of section.list">{{ item }}</li>
+        </ul>
+        <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
+
+        <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="start start" fxLayoutGap.gt-sm="1rem">
+          <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%">
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <mat-card-content>
+              <p>{{ item.description }}</p>
+              <mat-chip-list aria-label="Categories">
+                <mat-chip>{{ item.category }}</mat-chip>
+              </mat-chip-list>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-button color="primary" href="{{ item.repository }}" target="_blank">
+                <mat-icon style="margin-right: .5rem;">code</mat-icon>Source code
+              </a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+        <a *ngIf="section.id === 'demos'" href="https://temu.bsc.es/demos/" target="_blank" mat-button color="primary">
+          Our demos website
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+
+        <div *ngIf="section.id === 'events'" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
+          <mat-card *ngFor="let event of section.events" fxFlex.gt-sm="30%">
+            <mat-card-title fxLayout fxLayoutAlign="start center" fxLayoutGap="1rem">
+              <mat-icon>event</mat-icon>
+              <span>{{ event.date | date }}</span>
+            </mat-card-title>
+            <mat-card-content innerHTML="{{ event.description }}"></mat-card-content>
+          </mat-card>
+        </div>
+
+        <div *ngIf="section.id === 'talks'">
+          <ul>
+            <li>
+              Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.;
+              Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and
+              Krallinger, M. <b>Mining Spanish and Catalan Electronic
+                Health Records: Extraction of Information on Diagnosis of
+                Stroke from Discharge Reports.</b> In <i>3rd European
+                Conference on Translational Bioinformatics: Biomedical Big
+                Data Supporting Precision Medicine</i>, 2018.
+            </li>
+          </ul>
+        </div>
+
+        <a *ngIf="section.id === 'people'"
+          href="https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-people"
+          target="_blank" mat-button color="primary">
+          Our staff
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+
+        <a *ngIf="section.id === 'publications'"
+          href="https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-publications"
+          target="_blank" mat-button color="primary">
+          Our publications
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+
+        <a *ngIf="section.id === 'more'"
+          href="https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining" target="_blank"
+          mat-button color="primary">
+          More info about us at BSC website
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+
       </section>
     </main>
+    <footer>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="5rem">
+        <a *ngFor="let link of links; let last = last" href="{{ link.href }}" target="_blank">
+          <img src="{{ link.img.src }}" alt="{{ link.img.alt }}">
+          <mat-divider fxHide.gt-sm *ngIf="!last"></mat-divider>
+        </a>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" style="margin-top: 2rem;">
+        <span>This website was launched on December 2018 and redisigned with the Material Design guidelines on June 2020.</span>
+      </div>
+    </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

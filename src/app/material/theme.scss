@@ -40,3 +40,13 @@ $my-app-custom: mat-palette($custom-collection, custom);
 $my-app-theme: mat-light-theme($app-primary, $app-accent, $app-warn); // this row your should have already in your code where you select palettes for primary, accent and warn
 $my-app-theme: map_merge($my-app-theme, (custom: $my-app-custom));
 $custom: map-get($my-app-theme, custom);
+
+// https://material.angular.io/guide/typography#customization
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
+);
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);

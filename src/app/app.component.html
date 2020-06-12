@@ -1,94 +1,76 @@
-<mat-sidenav-container>
-  <mat-sidenav #snav mode="over" fixedInViewport style="width: 67%;">
-    <mat-toolbar class="mat-elevation-z4" style="background-color: white;">
-      <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon>close</mat-icon>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="over" class="sidenav" fixedInViewport>
+    <mat-toolbar>
+      <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
       </button>
-      <span style="margin-left: .5rem;">TEMU</span>
+      <span style="margin-left: .5rem;">Go to section</span>
     </mat-toolbar>
+    <mat-divider></mat-divider>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let section of sections" href="#{{ section.id }}"
-        (click)="snav.close()">{{ section.title }}</a>
+      <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" (click)="drawer.close()">
+        {{ section.title }}
+        <mat-divider></mat-divider>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
-
   <mat-sidenav-content>
-    <mat-toolbar class="mat-elevation-z4" style="position: fixed; top: 0; background-color: white;">
-      <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon>menu</mat-icon>
+    <mat-toolbar class="mat-elevation-z4">
+      <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span style="margin-left: .5rem;">TEMU</span>
     </mat-toolbar>
-    <main style="padding: 64px 1.5rem;">
-      <!-- <div style="height: 64px;"></div> -->
-
+    <main class="main">
       <h1 style="font-size: xx-large; font-weight: bold;">
         <span style="color: #298DAF; font-weight: bold;">Biomedical</span>
         <br>
         Text Mining Unit
       </h1>
-      <p>
-        The Text Mining Unit (TEMU) at Barcelona Super Computing Center focuses on the application and development of
-        biomedical text mining technologies, which are becoming a key tool for the efficient exploitation of information
-        contained in unstructured data repositories including the scientific literature, electronic health records
-        (EHRs),
-        patents, biobank metadata, clinical trials and social media. The unit has a particular interest in processing
-        clinical documents written in Spanish and other co-official languages in the area of health-related topics and
-        the
-        integration of molecular and biological information derived from the literature.
-      </p>
-      <p>
-        The unit is fully funded through the "Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan
-        TL)", in the framework of an agreement ("encomienda") between BSC and the Secretary of State of
-        Telecommunications
-        of the Spanish Ministry of Economic Affairs and Digital Transformation.
-      </p>
-
-      <div *ngFor="let section of sections" id="{{ section.id }}">
-        <h2 style="font-weight: bold;">{{ section.title }}</h2>
+      <section fxLayout="column" fxLayout.gt-sm="row" class="section">
+        <div>
+          <img src="assets/images/bsc.png" alt="BSC logo" class="img-mobile" ngClass.gt-sm="img-desktop">
+          <p>
+            The Text Mining Unit (TEMU) at Barcelona Super Computing Center focuses on the application and development
+            of
+            biomedical text mining technologies, which are becoming a key tool for the efficient exploitation of
+            information
+            contained in unstructured data repositories including the scientific literature, electronic health records
+            (EHRs), patents, biobank metadata, clinical trials and social media. The unit has a particular interest in
+            processing clinical documents written in Spanish and other co-official languages in the area of
+            health-related
+            topics and the integration of molecular and biological information derived from the literature.
+          </p>
+        </div>
+        <div>
+          <img src="assets/images/plantl.png" alt="PlanTL logo" class="img-mobile" ngClass.gt-sm="img-desktop">
+          <p>
+            The unit is fully funded through the
+            <span class="spanish keyword">Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan
+              TL)</span>,
+            in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC
+            and the Secretary of State of Telecommunications of the Spanish Ministry of Economic Affairs and Digital
+            Transformation.
+          </p>
+        </div>
+      </section>
+      <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
+        <h2 class="keyword heading" fxLayoutAlign="start center">
+          <span>{{ section.title }}</span>
+          <button mat-icon-button class="heading-link" [cdkCopyToClipboard]="getAnchorUrl(section.id)"
+            matTooltip="Copy heading link" matTooltipPosition="above">
+            <mat-icon>link</mat-icon>
+          </button>
+        </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ut debitis ad consequatur porro vero quae,
-          aliquid, quas dolor aspernatur rem delectus. At, tempore ratione modi quas, accusantium debitis natus animi
-          fuga, quod optio quae? Illum odio tenetur accusamus! Eaque eum repudiandae maiores dolores dignissimos qui
-          fuga
-          nemo provident ducimus libero, obcaecati voluptate quis suscipit natus, et ab commodi quas facilis, quidem
-          fugiat! Dignissimos minima placeat dolorem obcaecati animi rerum reprehenderit corrupti aut hic, facere magnam
-          sit quos ab blanditiis rem! Eaque, soluta. Molestias minus recusandae veritatis voluptatibus, a expedita
-          accusantium non harum blanditiis fugit, deserunt quas ullam ea sequi facere accusamus cupiditate eius quis
-          quidem voluptate necessitatibus suscipit dolore quibusdam. Assumenda aliquid nisi sunt distinctio vero beatae,
-          asperiores pariatur natus unde fuga laborum quis illum ullam architecto veritatis? Ipsum explicabo veniam
-          obcaecati natus eaque aliquam provident magnam quam accusantium dolore ea minima officia molestiae, similique
-          temporibus mollitia adipisci quos?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus veniam nulla non dolore. Quaerat
+          excepturi hic possimus accusantium exercitationem. Est vero facere reprehenderit nihil libero ex dolores
+          asperiores provident dolorum! Dolor vero sequi laudantium harum veniam minima voluptatem ullam quod, dolorem
+          quos fuga, sapiente tempore, doloribus sunt mollitia voluptate?
         </p>
-      </div>
+      </section>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-
-<!-- <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="opened = true" (closed)="opened = false">
-    Sidenav content
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-  </mat-sidenav-content>
-</mat-sidenav-container> -->
-
-<!-- <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="over">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
-  </mat-drawer>
-  <div style="margin-top: 3rem;">
-    content!
-  </div>
-</mat-drawer-container> -->
-
 
 <router-outlet></router-outlet>

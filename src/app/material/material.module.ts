@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core'
 
 // Import the NgModule for each component you want to use:
+
 // import { MatAutocompleteModule } from '@angular/material/autocomplete'
 // import { MatBottomSheetModule } from '@angular/material/bottom-sheet'
 import { MatButtonModule } from '@angular/material/button'
 // import { MatCardModule } from '@angular/material/card'
 // import { MatChipsModule } from '@angular/material/chips'
 // import { MatDatepickerModule } from '@angular/material/datepicker'
-// import { MatNativeDateModule } from '@angular/material/core';
 // import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatDividerModule } from '@angular/material/divider'
+// import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
-// import { MatListModule } from '@angular/material/list'
+import { MatListModule } from '@angular/material/list'
 // import { MatMenuModule } from '@angular/material/menu'
 // import { MatProgressBarModule } from '@angular/material/progress-bar'
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
@@ -26,6 +28,9 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 // import { MatTabsModule } from '@angular/material/tabs'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTooltipModule } from '@angular/material/tooltip'
+
+import { ClipboardModule } from '@angular/cdk/clipboard';
+
 // import { MaterialFileInputModule } from 'ngx-material-file-input'
 // import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core'
 
@@ -36,12 +41,13 @@ const material = [
   // MatCardModule,
   // MatChipsModule,
   // MatDatepickerModule,
+  MatDividerModule,
   // MatNativeDateModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  // MatListModule,
+  MatListModule,
   // MatMenuModule,
   // MatTableModule,
   // MatTabsModule,
@@ -55,7 +61,10 @@ const material = [
   MatToolbarModule,
   MatTooltipModule,
   // MatDialogModule,
-  // MaterialFileInputModule
+
+  ClipboardModule,
+
+  // MaterialFileInputModule,
 ]
 
 @NgModule({

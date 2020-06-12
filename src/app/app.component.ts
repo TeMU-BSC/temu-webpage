@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'temu-webpage';
 
-  showFiller = false;
-  opened: boolean;
+  opened: boolean = false;
+  anchorVisible: boolean = false;
 
   sections = [
     { id: 'aims', title: 'Aims & Objectives' },
@@ -21,4 +21,7 @@ export class AppComponent {
     { id: 'people', title: 'People' },
     { id: 'publications', title: 'Publications' },
   ]
+
+  getAnchorUrl = (sectionId: string) => `${window.location.origin}#${sectionId}`;
+
 }

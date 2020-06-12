@@ -1,0 +1,55 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 67%;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  // z-index: 1;
+  background-color: white;
+}
+
+.main {
+  padding: 64px 1.5rem;
+}
+
+.section {
+  padding-top: 64px;
+}
+
+.img-mobile {
+  width: 70%;
+}
+
+.img-desktop {
+  width: 20rem;
+}
+
+.spanish {
+  font-style: italic;
+}
+
+.keyword {
+  font-weight: bolder;
+}
+
+.heading-link {
+  cursor: pointer;
+}
+
+.heading .heading-link {
+  visibility: hidden;
+  // float: right;
+}
+
+.heading:hover .heading-link {
+  visibility: visible;
+}

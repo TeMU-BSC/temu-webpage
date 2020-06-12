@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  getBaseUrl = () => window.location.origin;
   getAnchorUrl = (sectionId: string) => `${window.location.origin}#${sectionId}`;
 
   sections = [

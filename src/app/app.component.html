@@ -19,7 +19,7 @@
       <button fxHide.gt-md aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <a href="getAnchorUrl()" class="temu-logo">TEMU</a>
+      <a [href]="getBaseUrl()" class="temu-logo">TEMU</a>
       <span class="spacer"></span>
       <mat-nav-list fxHide fxShow.gt-md fxLayout fxLayoutAlign="center center">
         <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" class="header-links">

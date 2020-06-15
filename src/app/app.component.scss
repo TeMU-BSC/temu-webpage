@@ -58,7 +58,7 @@ h2.heading {
 }
 
 .secondary {
-  color: gray;
+  color: #666666;
 }
 
 .section {
@@ -132,8 +132,8 @@ footer {
 
 .mat-chip {
   background-color: inherit;
-  border: 1px solid lightgrey;
-  color: grey;
+  border: 1px solid #666666;
+  color: #666666;
 }
 
 .mat-button,
@@ -143,8 +143,8 @@ footer {
 
 .header-links {
   font-size: small;
-  font-weight: 600;
-  color: grey;
+  font-weight: bolder;
+  // color: #1a1a1a;
 }
 
 .mat-line a {
@@ -157,3 +157,8 @@ footer {
 //   white-space: pre-wrap;
 //   height: 500px;
 // }
+
+.spaced-letters {
+  letter-spacing: .1rem;
+  line-height: 2.5rem;
+}

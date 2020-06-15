@@ -25,6 +25,24 @@ export class AppComponent {
       lastParagraph: 'One of the main scopes of the unit is to provide biomedical text mining and language processing infrastructures that can be maintained efficiently over time and be integrated in biomedical analysis platforms comprising data from experimental outcomes of patient-derived information.',
     },
     {
+      id: 'zenodo',
+      title: 'Zenodo uploads',
+      items: [
+        { name: 'FastText Spanish Medical Embeddings', description: 'Word embeddings generated from Spanish corpora that include: (a) the full-text in Spanish available in SciELO.org (until December/2018), (b) all articles from the following Wikipedia categories: Pharmacology, Pharmacy, Medicine and Biology (during December/2018) and (c) the concatenation of the previous two corpora.', category: 'Natural Language Processing', repository: 'https://zenodo.org/record/3744326' },
+        { name: 'MeSpEn Parallel Corpora', description: 'MeSpEn consists of a resource of heterogeneous health related documents in Spanish and English useful to build parallel corpora for training and evaluating Spanish <-> English medical machine translation systems, to generate multilingual automatic term extraction tools, and develop other Spanish medical NLP components.', category: 'Datasets', repository: 'https://zenodo.org/record/3562536' },
+        { name: 'Neural Machine Translation for the Biomedical Domain - WMT19', description: 'This package contains the files needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain.', category: 'Translation', repository: 'https://zenodo.org/record/3346802' },
+        { name: 'SPACCC', description: 'The Spanish Clinical Case Corpus, a collection of 1,000 clinical cases from SciELO.', category: 'Datasets', repository: 'https://zenodo.org/record/2560316' },
+        { name: 'AbreMES DB', description: 'The Spanish Medical Abbreviation DataBase.', category: 'Terminology', repository: 'https://zenodo.org/record/2207130' },
+        { name: 'MeSpEn Glossaries', description: 'This repository contains forty-six bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.', category: 'Terminology', repository: 'https://zenodo.org/record/2205690' },
+      ]
+    },
+    // {
+    //   id: 'campaigns',
+    //   title: 'Campaigns',
+    //   items: [
+    //   ]
+    // },
+    {
       id: 'tools',
       title: 'Tools & Components',
       items: [

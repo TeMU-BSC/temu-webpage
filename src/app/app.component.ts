@@ -14,8 +14,8 @@ export class AppComponent {
     { id: 'plantl', href: 'https://www.plantl.gob.es/', img: { src: 'assets/images/plantl.png', alt: 'Plan TL logo' } },
     { id: 'sead', href: 'https://avancedigital.gob.es/', img: { src: 'assets/images/estado_digital_teleco.gif', alt: 'SEAD logo' } },
     { id: 'bsc', href: 'https://www.bsc.es/', img: { src: 'assets/images/BSC-blue.svg', alt: 'BSC logo' } },
-    { id: 'github', href: 'https://github.com/PlanTL-SANIDAD', img: { src: 'assets/images/GitHub_Logo_White.png', alt: 'GitHub logo' } },
-    { id: 'zenodo', href: 'https://zenodo.org/communities/medicalnlp/search?page=1&size=20', img: { src: 'assets/images/zenodo.svg', alt: 'Zenodo logo' } },
+    { id: 'github', href: 'https://github.com/PlanTL-SANIDAD', img: { src: 'assets/images/GitHub_Logo.png', alt: 'GitHub logo' } },
+    { id: 'zenodo', href: 'https://zenodo.org/communities/medicalnlp/', img: { src: 'assets/images/zenodo-black-border.svg', alt: 'Zenodo logo' } },
   ];
 
   sections = [
@@ -32,25 +32,46 @@ export class AppComponent {
       ],
       lastParagraph: 'One of the main scopes of the unit is to provide biomedical text mining and language processing infrastructures that can be maintained efficiently over time and be integrated in biomedical analysis platforms comprising data from experimental outcomes of patient-derived information.',
     },
-    // {
-    //   id: 'zenodo',
-    //   title: 'Zenodo uploads',
-    //   firstParagraph: 'Our most viewed and downloaded resources at Zenodo are:',
-    //   items: [
-    //
-    //   ],
-    //   more: this.links.find(link => link.id === 'zenodo')
-    // },
     {
       id: 'campaigns',
       title: 'Campaigns',
       items: [
-        { name: 'BARR2', description: 'Biomedical Abbreviation Recognition and Resolution (2nd Edition)', category: 'Evaluation campaigns', web: 'https://temu.bsc.es/BARR2/' },
-        { name: 'CANTEMIST', description: 'Cancer Text Mining Shared Task – tumor named entity recognition', category: 'Evaluation campaigns', web: 'https://temu.bsc.es/cantemist/' },
-        { name: 'CODIESP', description: 'Clinical Case Coding in Spanish Shared Task (eHealth CLEF 2020)', category: 'Evaluation campaigns', web: 'https://temu.bsc.es/codiesp/' },
-        { name: 'MEDDOCAN', description: 'Medical Document Anonymization', category: 'Evaluation campaigns', web: 'https://temu.bsc.es/meddocan/' },
-        { name: 'MESINESP', description: 'Medical Semantic Indexing in Spanish', category: 'Evaluation campaigns', web: 'https://temu.bsc.es/mesinesp/' },
-        { name: 'PHARMACONER', description: 'Pharmacological Substances, Compounds and proteins and Named Entity Recognition', category: 'Evaluation campaigns', web: 'https://temu.bsc.es/pharmaconer/' },
+        {
+          name: 'BARR2',
+          description: 'Biomedical Abbreviation Recognition and Resolution (2nd Edition)',
+          category: 'Evaluation campaigns',
+          web: 'https://temu.bsc.es/BARR2/'
+        },
+        {
+          name: 'CANTEMIST',
+          description: 'Cancer Text Mining Shared Task – tumor named entity recognition',
+          category: 'Evaluation campaigns',
+          web: 'https://temu.bsc.es/cantemist/'
+        },
+        {
+          name: 'CODIESP',
+          description: 'Clinical Case Coding in Spanish Shared Task (eHealth CLEF 2020)',
+          category: 'Evaluation campaigns',
+          web: 'https://temu.bsc.es/codiesp/'
+        },
+        {
+          name: 'MEDDOCAN',
+          description: 'Medical Document Anonymization',
+          category: 'Evaluation campaigns',
+          web: 'https://temu.bsc.es/meddocan/'
+        },
+        {
+          name: 'MESINESP',
+          description: 'Medical Semantic Indexing in Spanish',
+          category: 'Evaluation campaigns',
+          web: 'https://temu.bsc.es/mesinesp/'
+        },
+        {
+          name: 'PHARMACONER',
+          description: 'Pharmacological Substances, Compounds and proteins and Named Entity Recognition',
+          category: 'Evaluation campaigns',
+          web: 'https://temu.bsc.es/pharmaconer/'
+        },
 
         // Antonio on campañas de evaluación (2020-06-17):
         // seguro: pharmaconer, mesinesp, meddocan, codiesp, cantemist
@@ -89,54 +110,170 @@ export class AppComponent {
       ]
     },
     {
-      id: 'tools',
-      title: 'Tools & Components',
-      items: [
-        { name: 'Medical PoS tagger', description: 'A Part-of-Speech Tagger for medical domain corpus in Spanish based on FreeLing.', category: 'Natural Language Processing', repository: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS-TAGGER' },
-        { name: 'Medical Negation Detection', description: 'A system for negation detection in Spanish clinical texts based on Wendy Chapman\'s NegEx algorithm.', category: 'Natural Language Processing', repository: 'https://github.com/PlanTL-SANIDAD/NegEx-MES' },
-        { name: 'Medical Abbreviation extractor', description: 'Software used to generate a database of abbreviations in the Spanish medical domain.', category: 'Other tools', repository: 'https://github.com/PlanTL-SANIDAD/AbreMES-X' },
-      ],
-      more: this.links.find(link => link.id === 'github')
-    },
-    {
       id: 'resources',
       title: 'Resources',
-      'first-p': 'This section provides links to various types of resources, developed both by TEMU and externally.',
+      firstParagraph: 'This section provides links to various types of resources, developed both by TEMU and externally.',
       items: [
-        // github
-
-        { name: 'SPACCC_SPLIT', description: 'A collection of 1,000 clinical cases in Spanish where sentence boundary symbols are marked-up.', category: 'Annotated corpora', repository: 'https://github.com/PlanTL-SANIDAD/SPACCC_SPLIT' },
-        { name: 'SPACCC_TOKEN', description: 'A collection of 1,000 clinical cases in Spanish where sentence tokens are marked-up.', category: 'Annotated corpora', repository: 'https://github.com/PlanTL-SANIDAD/SPACCC_TOKEN' },
-        { name: 'SPACCC_POS', description: 'A collection of 1,000 clinical cases in Spanish annotated with Part-of-Speech tags.', category: 'Annotated corpora', repository: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS' },
-        { name: 'Spanish Medical Abbreviation DataBase', description: 'The database is created automatically by detecting abbreviations and their potential definitions explicitly mentioned in the same sentence. These abbreviations are extracted from the metadata of different biomedical publications written in Spanish, which contain the titles and abstracts. The sources of these publications are SciELO, IBECS and Pubmed.', category: 'Terminological resources', repository: 'https://github.com/PlanTL-SANIDAD/AbreMES-DB' },
-        { name: 'Bilingual medical glossaries', description: 'Bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.', category: 'Terminological resources', repository: 'https://github.com/PlanTL-SANIDAD/MeSpEn_Glossaries' },
-        { name: 'Neural Machine Translation for the Biomedical Domain', description: 'A number of translation models for neural machine translation needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain. The available language directions for translation are: English to Spanish, Spanish to English, English to Portuguese, Portuguese to English, Spanish to Portuguese and Portuguese to Spanish.', category: 'Translation models', repository: 'https://github.com/PlanTL-SANIDAD/Medical-Translator' },
-
-        // zenodo
-        { name: 'FastText Spanish Medical Embeddings', description: 'Word embeddings generated from Spanish corpora that include: (a) the full-text in Spanish available in SciELO.org (until December/2018), (b) all articles from the following Wikipedia categories: Pharmacology, Pharmacy, Medicine and Biology (during December/2018) and (c) the concatenation of the previous two corpora.', category: 'Natural Language Processing', repository: 'https://zenodo.org/record/3744326' },
-        { name: 'MeSpEn Parallel Corpora', description: 'MeSpEn consists of a resource of heterogeneous health related documents in Spanish and English useful to build parallel corpora for training and evaluating Spanish <-> English medical machine translation systems, to generate multilingual automatic term extraction tools, and develop other Spanish medical NLP components.', category: 'Datasets', repository: 'https://zenodo.org/record/3562536' },
-        { name: 'Neural Machine Translation for the Biomedical Domain - WMT19', description: 'This package contains the files needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain.', category: 'Translation', repository: 'https://zenodo.org/record/3346802' },
-        { name: 'SPACCC', description: 'The Spanish Clinical Case Corpus, a collection of 1,000 clinical cases from SciELO.', category: 'Datasets', repository: 'https://zenodo.org/record/2560316' },
-        { name: 'AbreMES DB', description: 'The Spanish Medical Abbreviation DataBase.', category: 'Terminology', repository: 'https://zenodo.org/record/2207130' },
-        { name: 'MeSpEn Glossaries', description: 'This repository contains forty-six bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.', category: 'Terminology', repository: 'https://zenodo.org/record/2205690' },
-
+        {
+          name: 'FastText Spanish Medical Embeddings',
+          description: 'Word embeddings generated from Spanish corpora.',
+          category: 'Natural Language Processing',
+          repository: 'zenodo',
+          href: 'https://zenodo.org/record/3744326'
+        },
+        {
+          name: 'MeSpEn Parallel Corpora',
+          description: 'Heterogeneous health related documents in Spanish and English useful to build parallel corpora for training and evaluating medical machine translation systems.',
+          category: 'Datasets',
+          repository: 'zenodo',
+          href: 'https://zenodo.org/record/3562536'
+        },
+        {
+          name: 'Neural Machine Translation for the Biomedical Domain - WMT19',
+          description: 'This package contains the files needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain.',
+          category: 'Translation',
+          repository: 'zenodo',
+          href: 'https://zenodo.org/record/3346802'
+        },
+        {
+          name: 'SPACCC',
+          description: 'The Spanish Clinical Case Corpus, a collection of 1,000 clinical cases from SciELO.',
+          category: 'Datasets',
+          repository: 'zenodo',
+          href: 'https://zenodo.org/record/2560316'
+        },
+        {
+          name: 'AbreMES DB',
+          description: 'The Spanish Medical Abbreviation DataBase.',
+          category: 'Terminology',
+          repository: 'zenodo',
+          href: 'https://zenodo.org/record/2207130'
+        },
+        {
+          name: 'MeSpEn Glossaries',
+          description: '46 bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
+          category: 'Terminology',
+          repository: 'zenodo',
+          href: 'https://zenodo.org/record/2205690'
+        },
+        {
+          name: 'SPACCC_SPLIT',
+          description: 'A collection of 1,000 clinical cases in Spanish where sentence boundary symbols are marked-up.',
+          category: 'Annotated corpora',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_SPLIT'
+        },
+        {
+          name: 'SPACCC_TOKEN',
+          description: 'A collection of 1,000 clinical cases in Spanish where sentence tokens are marked-up.',
+          category: 'Annotated corpora',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_TOKEN'
+        },
+        {
+          name: 'SPACCC_POS',
+          description: 'A collection of 1,000 clinical cases in Spanish annotated with Part-of-Speech tags.',
+          category: 'Annotated corpora',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS'
+        },
+        {
+          name: 'Spanish Medical Abbreviation DataBase',
+          description: 'The database is created automatically by detecting abbreviations and their potential definitions explicitly mentioned in the same sentence.',
+          category: 'Terminological resources',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/AbreMES-DB'
+        },
+        {
+          name: 'Bilingual medical glossaries',
+          description: 'Bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
+          category: 'Terminological resources',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/MeSpEn_Glossaries'
+        },
+        {
+          name: 'Neural Machine Translation for the Biomedical Domain',
+          description: 'A number of translation models for neural machine translation needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain in the languages English, Spanish and Portuguese.',
+          category: 'Translation models',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/Medical-Translator'
+        },
       ],
       more: this.links.find(link => link.id === 'zenodo')
+    },
+    {
+      id: 'tools',
+      title: 'Tools',
+      items: [
+        {
+          name: 'Medical PoS tagger',
+          description: 'A Part-of-Speech Tagger for medical domain corpus in Spanish based on FreeLing.',
+          category: 'Natural Language Processing',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS-TAGGER'
+        },
+        {
+          name: 'Medical Negation Detection',
+          description: 'A system for negation detection in Spanish clinical texts based on Wendy Chapman\'s NegEx algorithm.',
+          category: 'Natural Language Processing',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/NegEx-MES'
+        },
+        {
+          name: 'Medical Abbreviation extractor',
+          description: 'Software used to generate a database of abbreviations in the Spanish medical domain.',
+          category: 'Other tools',
+          repository: 'github',
+          href: 'https://github.com/PlanTL-SANIDAD/AbreMES-X'
+        },
+      ],
+      more: this.links.find(link => link.id === 'github')
     },
     {
       id: 'events',
       title: 'Events',
       events: [
-        { date: new Date('2018-09-19'), description: `<a href="http://www.agendadigital.gob.es/tecnologias-lenguaje/comunicacion-formacion/eventos/Paginas/Infoday-2018-Plan-TL-y-Sanidad.aspx">Infoday about Language Technologies in Healthcare</a>: Infoday on actions of the Plan TL in Healthcare at <a href="http://www.sepln2018.com/">SEPLN-2018</a>.` },
-        { date: new Date('2018-09-18'), description: `<a href="https://sites.google.com/view/ibereval-2018">BARR2</a>: Biomedical Abbreviation Recognition and Resolution 2nd Edition <a href="https://sites.google.com/view/ibereval-2018">IberEval workshop</a> at <a href="http://www.sepln2018.com/">SEPLN-2018</a>.` },
-        { date: new Date('2018-05-09'), description: `<a href="https://multilingualbio.bsc.es/">MultilingualBio</a>: Multilingual Biomedical Text Processing Workshop at <a href="http://lrec2018.lrec-conf.org/en/">LREC-2018</a>.` },
-        { date: new Date('2018-02-27'), description: `<a href="https://www.hackathonplantl.es/"> II Hackathon de Tecnologías del Lenguaje en $YFN</a>: Hackathon to promote the development of prototypes based on NLP, MT and conversational systems.` },
-        { date: new Date('2017-09-19'), description: `<a href="http://temu.bsc.es/BARR">BARR</a>: Biomedical Abbreviation Recognition and Resolution <a href="http://cabrillo.lsi.uned.es/nlp/IberEval-2017/">IberEval workhop</a> at <a href="http://sepln2017.um.es/">SEPLN-2017</a>.` },
+        {
+          date: new Date('2019-12-02'),
+          title: 'Infoday sobre tecnologías del lenguaje en sanidad y biomedicina',
+          description: `Dissemination of the initiatives launched by the TL Plan, as well as the collaborations and results generated in the health sector.`,
+          href: 'https://www.bsc.es/news/events/infoday-sobre-tecnolog%C3%ADas-del-lenguaje-en-sanidad-y-biomedicina'
+        },
+        {
+          date: new Date('2018-09-19'),
+          title: 'Infoday about Language Technologies in Healthcare',
+          description: `Infoday on actions of the Plan TL in Healthcare at <a href="http://www.sepln2018.com/">SEPLN-2018</a>.`,
+          href: 'http://www.agendadigital.gob.es/tecnologias-lenguaje/comunicacion-formacion/eventos/Paginas/Infoday-2018-Plan-TL-y-Sanidad.aspx'
+        },
+        {
+          date: new Date('2018-09-18'),
+          title: 'BARR2',
+          description: `Biomedical Abbreviation Recognition and Resolution 2nd Edition <a href="https://sites.google.com/view/ibereval-2018">IberEval workshop</a> at <a href="http://www.sepln2018.com/">SEPLN-2018</a>.`,
+          href: 'https://sites.google.com/view/ibereval-2018'
+        },
+        {
+          date: new Date('2018-05-09'),
+          title: 'MultilingualBio',
+          description: `Multilingual Biomedical Text Processing Workshop at <a href="http://lrec2018.lrec-conf.org/en/">LREC-2018</a>.`,
+          href: 'https://multilingualbio.bsc.es/'
+        },
+        {
+          date: new Date('2018-02-27'),
+          title: 'II Hackathon de Tecnologías del Lenguaje en $YFN',
+          description: `Hackathon to promote the development of prototypes based on NLP, MT and conversational systems.`,
+          href: 'https://www.hackathonplantl.es/'
+        },
+        {
+          date: new Date('2017-09-19'),
+          title: 'BARR',
+          description: `Biomedical Abbreviation Recognition and Resolution <a href="http://cabrillo.lsi.uned.es/nlp/IberEval-2017/">IberEval workhop</a> at <a href="http://sepln2017.um.es/">SEPLN-2017</a>.`,
+          href: 'http://temu.bsc.es/BARR'
+        },
       ]
     },
     {
       id: 'talks',
-      title: 'Talks & Presentations',
+      title: 'Talks',
       talks: [
         { description: `Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.; Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and Krallinger, M. <b>Mining Spanish and Catalan Electronic Health Records: Extraction of Information on Diagnosis of Stroke from Discharge Reports.</b> In <i>3rd European Conference on Translational Bioinformatics: Biomedical Big Data Supporting Precision Medicine</i>, 2018.` },
       ]
@@ -145,10 +282,26 @@ export class AppComponent {
       id: 'more',
       title: 'More about us',
       links: [
-        { id: 'people', href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-people', text: 'Our staff' },
-        { id: 'publications', href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-publications', text: 'Our publications' },
-        { id: 'demos', href: 'https://temu.bsc.es/demos/', text: 'Our online demos' },
-        { id: 'temu', href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining', text: 'More about TEMU at BSC' },
+        {
+          id: 'people',
+          text: 'Our staff',
+          href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-people',
+        },
+        {
+          id: 'publications',
+          text: 'Our publications',
+          href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-publications',
+        },
+        {
+          id: 'demos',
+          text: 'Our online demos',
+          href: 'https://temu.bsc.es/demos/',
+        },
+        {
+          id: 'temu',
+          text: 'More about TEMU at BSC',
+          href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining',
+        },
       ]
     },
   ]

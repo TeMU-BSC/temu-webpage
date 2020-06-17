@@ -28,9 +28,8 @@
       </mat-nav-list>
     </mat-toolbar>
     <main class="main" ngClass.gt-sm="main-desktop">
-      <h1 class="heading spaced-letters">
+      <h1 class="heading">
         <span class="plantl-color">Biomedical</span>
-        <br>
         Text Mining Unit
       </h1>
       <p class="secondary">OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
@@ -68,7 +67,7 @@
         </div>
       </section>
       <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
-        <h2 class="heading" fxLayoutAlign="start center">
+        <h2 class="heading plantl-color" fxLayoutAlign="start center">
           <span>{{ section.title }}</span>
           <a mat-icon-button href="#{{ section.id }}" class="heading-link"
             [cdkCopyToClipboard]="getAnchorUrl(section.id)" matTooltip="Copy heading link" matTooltipPosition="above">
@@ -82,36 +81,43 @@
         </ul>
         <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
 
-        <div *ngIf="section.items" fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="start start" fxLayoutGap.gt-sm="1rem">
-          <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%">
-            <mat-card-title>{{ item.name }}</mat-card-title>
-            <mat-card-content>
-              <p>{{ item.description }}</p>
+        <div *ngIf="section.items" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
+          <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%" fxLayout="column"
+            fxLayoutAlign="space-between">
+            <div>
+              <mat-card-title>{{ item.name }}</mat-card-title>
+              <mat-card-content>{{ item.description }}</mat-card-content>
+            </div>
+            <mat-card-actions>
               <mat-chip-list aria-label="Categories">
                 <mat-chip>{{ item.category }}</mat-chip>
               </mat-chip-list>
-            </mat-card-content>
-            <mat-card-actions>
-              <a *ngIf="item.repository" mat-button color="primary" href="{{ item.repository }}" target="_blank">
-                <mat-icon style="margin-right: .5rem;">code</mat-icon>Repository
+              <a *ngIf="item.repository === 'zenodo'" mat-button color="primary" href="{{ item.href }}" target="_blank">
+                <mat-icon>cloud_queue</mat-icon>Zenodo
               </a>
-              <a *ngIf="item.web" mat-button color="primary" href="{{ item.web }}" target="_blank">
-                <mat-icon style="margin-right: .5rem;">web</mat-icon>Web
+              <a *ngIf="item.repository === 'github'" mat-button color="primary" href="{{ item.href }}" target="_blank">
+                <mat-icon>code</mat-icon>GitHub
+              </a>
+              <a *ngIf="item.category === 'Evaluation campaigns'" mat-button color="primary" href="{{ item.web }}" target="_blank">
+                <mat-icon>web</mat-icon>Web
               </a>
             </mat-card-actions>
           </mat-card>
         </div>
 
-        <a *ngIf="section.more" href="{{ section.more.href }}" target="_blank" mat-button color="primary">Explore more
-          <mat-icon>open_in_new</mat-icon></a>
-
         <div *ngIf="section.id === 'events'" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
-          <mat-card *ngFor="let event of section.events" fxFlex.gt-sm="30%">
-            <mat-card-title fxLayout fxLayoutAlign="start center" fxLayoutGap="1rem">
-              <mat-icon>event</mat-icon>
-              <span>{{ event.date | date }}</span>
-            </mat-card-title>
-            <mat-card-content innerHTML="{{ event.description }}"></mat-card-content>
+          <mat-card *ngFor="let event of section.events" fxFlex.gt-sm="30%" fxLayout="column"
+            fxLayoutAlign="space-between">
+            <div>
+              <mat-card-title>{{ event.title }}</mat-card-title>
+              <mat-card-subtitle>{{ event.date | date }}</mat-card-subtitle>
+              <mat-card-content innerHTML="{{ event.description }}"></mat-card-content>
+            </div>
+            <mat-card-actions>
+              <a *ngIf="event.href" mat-button color="primary" href="{{ event.href }}" target="_blank">
+                <mat-icon>event</mat-icon>Event details
+              </a>
+            </mat-card-actions>
           </mat-card>
         </div>
 
@@ -129,6 +135,11 @@
             </a>
           </li>
         </ul>
+
+        <a *ngIf="section.more" href="{{ section.more.href }}" target="_blank" mat-stroked-button color="primary">
+          Explore more
+          <mat-icon>open_in_new</mat-icon>
+        </a>
 
       </section>
     </main>

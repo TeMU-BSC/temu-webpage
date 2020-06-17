@@ -49,6 +49,8 @@
             languages in the area of health-related topics and the integration of molecular and biological information
             derived from the literature.
           </p>
+          <a href="https://www.bsc.es/" target="_blank" mat-button color="primary">BSC website <mat-icon>open_in_new
+            </mat-icon></a>
         </div>
         <div fxFlex.gt-sm="50%">
           <img src="assets/images/plantl.png" alt="PlanTL logo" class="logo" ngClass.gt-sm="logo-desktop">
@@ -61,6 +63,8 @@
             <!-- Secretary of State of Telecommunications of the Spanish Ministry of Economic Affairs and Digital Transformation. -->
             <span class="spanish">Ministerio de Asuntos Económicos y Transformación Digital</span>.
           </p>
+          <a href="https://www.plantl.gob.es/" target="_blank" mat-button color="primary">Plan TL website <mat-icon>
+              open_in_new</mat-icon></a>
         </div>
       </section>
       <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
@@ -73,12 +77,12 @@
         </h2>
 
         <p *ngIf="section.firstParagraph">{{ section.firstParagraph }}</p>
-        <ul>
+        <ul *ngIf="section.list">
           <li *ngFor="let item of section.list">{{ item }}</li>
         </ul>
         <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
 
-        <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="start start" fxLayoutGap.gt-sm="1rem">
+        <div *ngIf="section.items" fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="start start" fxLayoutGap.gt-sm="1rem">
           <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%">
             <mat-card-title>{{ item.name }}</mat-card-title>
             <mat-card-content>
@@ -88,17 +92,18 @@
               </mat-chip-list>
             </mat-card-content>
             <mat-card-actions>
-              <a mat-button color="primary" href="{{ item.repository }}" target="_blank">
+              <a *ngIf="item.repository" mat-button color="primary" href="{{ item.repository }}" target="_blank">
                 <mat-icon style="margin-right: .5rem;">code</mat-icon>Repository
+              </a>
+              <a *ngIf="item.web" mat-button color="primary" href="{{ item.web }}" target="_blank">
+                <mat-icon style="margin-right: .5rem;">web</mat-icon>Web
               </a>
             </mat-card-actions>
           </mat-card>
         </div>
 
-        <a *ngIf="section.id === 'demos'" href="https://temu.bsc.es/demos/" target="_blank" mat-button color="primary">
-          Our demos website
-          <mat-icon>open_in_new</mat-icon>
-        </a>
+        <a *ngIf="section.more" href="{{ section.more.href }}" target="_blank" mat-button color="primary">Explore more
+          <mat-icon>open_in_new</mat-icon></a>
 
         <div *ngIf="section.id === 'events'" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
           <mat-card *ngFor="let event of section.events" fxFlex.gt-sm="30%">
@@ -112,50 +117,32 @@
 
         <div *ngIf="section.id === 'talks'">
           <ul>
-            <li>
-              Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.;
-              Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and
-              Krallinger, M. <b>Mining Spanish and Catalan Electronic
-                Health Records: Extraction of Information on Diagnosis of
-                Stroke from Discharge Reports.</b> In <i>3rd European
-                Conference on Translational Bioinformatics: Biomedical Big
-                Data Supporting Precision Medicine</i>, 2018.
-            </li>
+            <li *ngFor="let talk of section.talks" innerHTML="{{ talk.description }}"></li>
           </ul>
         </div>
 
-        <a *ngIf="section.id === 'people'"
-          href="https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-people"
-          target="_blank" mat-button color="primary">
-          Our staff
-          <mat-icon>open_in_new</mat-icon>
-        </a>
-
-        <a *ngIf="section.id === 'publications'"
-          href="https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-publications"
-          target="_blank" mat-button color="primary">
-          Our publications
-          <mat-icon>open_in_new</mat-icon>
-        </a>
-
-        <a *ngIf="section.id === 'more'"
-          href="https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining" target="_blank"
-          mat-button color="primary">
-          More info about us at BSC website
-          <mat-icon>open_in_new</mat-icon>
-        </a>
+        <ul *ngIf="section.id === 'more'">
+          <li *ngFor="let link of section.links">
+            <a href="{{ link.href }}" target="_blank" mat-button color="primary">
+              {{ link.text }}
+              <mat-icon>open_in_new</mat-icon>
+            </a>
+          </li>
+        </ul>
 
       </section>
     </main>
     <footer>
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="5rem">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row"
+        fxLayoutGap.gt-sm="5rem">
         <a *ngFor="let link of links; let last = last" href="{{ link.href }}" target="_blank">
           <img src="{{ link.img.src }}" alt="{{ link.img.alt }}">
           <mat-divider fxHide.gt-sm *ngIf="!last"></mat-divider>
         </a>
       </div>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" style="margin-top: 2rem;">
-        <span>This website was launched on December 2018 and redisigned with the Material Design guidelines on June 2020.</span>
+        <span>This website was launched on December 2018 and redisigned with the Material Design guidelines on June
+          2020.</span>
       </div>
     </footer>
   </mat-sidenav-content>

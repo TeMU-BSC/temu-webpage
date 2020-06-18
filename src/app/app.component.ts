@@ -124,7 +124,7 @@ export class AppComponent {
         {
           name: 'MeSpEn Parallel Corpora',
           description: 'Heterogeneous health related documents in Spanish and English useful to build parallel corpora for training and evaluating medical machine translation systems.',
-          category: 'Datasets',
+          category: 'Corpora',
           repository: 'zenodo',
           href: 'https://zenodo.org/record/3562536'
         },
@@ -138,20 +138,20 @@ export class AppComponent {
         {
           name: 'SPACCC',
           description: 'The Spanish Clinical Case Corpus, a collection of 1,000 clinical cases from SciELO.',
-          category: 'Datasets',
+          category: 'Corpora',
           repository: 'zenodo',
           href: 'https://zenodo.org/record/2560316'
         },
         {
           name: 'AbreMES DB',
-          description: 'The Spanish Medical Abbreviation DataBase.',
+          description: 'The Spanish Medical Abbreviation Database.',
           category: 'Terminology',
           repository: 'zenodo',
           href: 'https://zenodo.org/record/2207130'
         },
         {
           name: 'MeSpEn Glossaries',
-          description: '46 bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
+          description: 'Bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
           category: 'Terminology',
           repository: 'zenodo',
           href: 'https://zenodo.org/record/2205690'
@@ -176,27 +176,6 @@ export class AppComponent {
           category: 'Annotated corpora',
           repository: 'github',
           href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS'
-        },
-        {
-          name: 'Spanish Medical Abbreviation DataBase',
-          description: 'The database is created automatically by detecting abbreviations and their potential definitions explicitly mentioned in the same sentence.',
-          category: 'Terminological resources',
-          repository: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/AbreMES-DB'
-        },
-        {
-          name: 'Bilingual medical glossaries',
-          description: 'Bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
-          category: 'Terminological resources',
-          repository: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/MeSpEn_Glossaries'
-        },
-        {
-          name: 'Neural Machine Translation for the Biomedical Domain',
-          description: 'A number of translation models for neural machine translation needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain in the languages English, Spanish and Portuguese.',
-          category: 'Translation models',
-          repository: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/Medical-Translator'
         },
       ],
       more: this.links.find(link => link.id === 'zenodo')

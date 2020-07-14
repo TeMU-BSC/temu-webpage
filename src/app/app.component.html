@@ -94,15 +94,8 @@
               <mat-chip-list aria-label="Categories">
                 <mat-chip>{{ item.category }}</mat-chip>
               </mat-chip-list>
-              <a *ngIf="item.repository === 'zenodo'" mat-button color="primary" href="{{ item.href }}" target="_blank">
-                <mat-icon class="material-icons-round">cloud_queue</mat-icon>Zenodo
-              </a>
-              <a *ngIf="item.repository === 'github'" mat-button color="primary" href="{{ item.href }}" target="_blank">
-                <mat-icon class="material-icons-round">code</mat-icon>GitHub
-              </a>
-              <a *ngIf="item.category === 'Evaluation campaigns'" mat-button color="primary" href="{{ item.web }}"
-                target="_blank">
-                <mat-icon class="material-icons-round">web</mat-icon>Web
+              <a mat-button color="primary" href="{{ item.href }}" target="_blank">
+                <mat-icon class="material-icons-round">{{ item.icon }}</mat-icon>{{ item.type | titlecase }}
               </a>
             </mat-card-actions>
           </mat-card>
@@ -117,8 +110,8 @@
               <mat-card-content innerHTML="{{ event.description }}"></mat-card-content>
             </div>
             <mat-card-actions>
-              <a *ngIf="event.href" mat-button color="primary" href="{{ event.href }}" target="_blank">
-                <mat-icon class="material-icons-round">event</mat-icon>Event details
+              <a mat-button color="primary" href="{{ event.href }}" target="_blank">
+                <mat-icon class="material-icons-round">{{ event.icon }}</mat-icon>{{ event.type | titlecase }}
               </a>
             </mat-card-actions>
           </mat-card>

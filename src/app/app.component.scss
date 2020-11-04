@@ -1,3 +1,24 @@
+@import '~@angular/material/theming';
+
+.mat-card {
+  margin: 1rem 0;
+
+  &:hover {
+    @include mat-elevation(8);
+  }
+
+  .mat-card-title {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  .mat-card-content {
+    margin-top: 1em;
+  }
+}
+
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -45,10 +66,6 @@ h1.heading {
 h2.heading {
   font-size: 2em;
   font-weight: 700;
-  // box-shadow: 0px 24px 3px -24px #298daf;
-  // text-decoration: underline #298daf solid;
-  // border-bottom: .1rem solid #298daf;
-  // padding-bottom: .3rem;
 }
 
 .main {
@@ -67,15 +84,10 @@ h2.heading {
   padding-top: 64px;
 }
 
-.logo {
-  width: 80%;
-  height: auto;
-  padding: 1rem 0;
-}
-
-.logo-desktop {
-  width: auto;
+.hero-image {
   height: 5rem;
+  width: auto;
+  max-width: 100%;
   padding: 1rem 0;
 }
 
@@ -119,20 +131,6 @@ footer {
   }
 }
 
-.mat-card {
-  margin: 1rem 0;
-}
-
-.mat-card-title {
-  font-size: large;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.mat-card-content p {
-  margin-bottom: 1.5rem;
-}
-
 .mat-chip {
   // background-color: inherit;
   // border: 1px solid #666666;
@@ -160,4 +158,8 @@ a.mat-button {
 
 a mat-icon {
   margin-right: .5rem;
+}
+
+ul {
+  list-style-type: none;
 }

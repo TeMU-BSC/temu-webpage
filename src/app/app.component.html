@@ -30,10 +30,9 @@
     <main class="main" ngClass.gt-sm="main-desktop">
       <h1 class="heading"><span class="plantl-color">Biomedical</span> Text Mining Unit</h1>
       <p class="secondary">OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
-      <section fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="center start" fxLayoutGap.gt-sm="5rem"
-        class="section">
-        <div fxFlex.gt-sm="50%">
-          <img src="assets/images/BSC-blue.svg" alt="BSC logo" class="logo" ngClass.gt-sm="logo-desktop">
+      <section class="section" fxLayout="column" fxLayout.gt-sm fxLayoutGap="1rem">
+        <mat-card fxFlex.gt-sm="50%">
+          <img src="assets/images/BSC-blue.svg" alt="BSC logo" class="hero-image">
           <p>
             The Text Mining Unit (TEMU) at Barcelona Super Computing Center focuses on the application and development
             of biomedical text mining technologies, which are becoming a key tool for the efficient exploitation of
@@ -48,23 +47,23 @@
           <a href="https://www.bsc.es/" target="_blank" mat-button color="primary">BSC website
             <mat-icon>open_in_new</mat-icon>
           </a>
-        </div>
-        <div fxFlex.gt-sm="50%">
-          <img src="assets/images/plantl.png" alt="PlanTL logo" class="logo" ngClass.gt-sm="logo-desktop">
-          <p>
-            The unit is fully funded through the
+        </mat-card>
+        <mat-card fxFlex.gt-sm="50%">
+          <img src="assets/images/plantl.png" alt="Plan TL logo" class="hero-image">
+          <p>The unit is fully funded through the
             <span class="spanish">Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan TL)</span>
             , in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC and the
-            <!-- Secretary of State of Telecommunications of the Spanish Ministry of Economic Affairs and Digital Transformation. -->
-            <span class="spanish">Ministerio de Asuntos Económicos y Transformación Digital</span>.
+            <span class="spanish">
+              <a href="https://www.mineco.gob.es" target="_blank">Ministerio de Asuntos Económicos y Transformación Digital</a>
+            </span>.
           </p>
           <a href="https://www.plantl.gob.es/" target="_blank" mat-button color="primary">Plan TL website
             <mat-icon>open_in_new</mat-icon>
           </a>
-        </div>
+        </mat-card>
       </section>
       <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
-        <h2 class="heading plantl-color" fxLayoutAlign="start center">
+        <h2 *ngIf="section.title" class="heading plantl-color" fxLayoutAlign="start center">
           <span>{{ section.title }}</span>
           <a mat-icon-button href="#{{ section.id }}" class="heading-link"
             [cdkCopyToClipboard]="getAnchorUrl(section.id)" matTooltip="Copy heading link" matTooltipPosition="above">
@@ -72,21 +71,22 @@
           </a>
         </h2>
         <p *ngIf="section.firstParagraph">{{ section.firstParagraph }}</p>
-        <ul *ngIf="section.list">
-          <li *ngFor="let item of section.list">{{ item }}</li>
+        <ul *ngIf="section.bulletItems">
+          <li *ngFor="let bullet of section.bulletItems">
+            <mat-icon class="plantl-color" style="font-size: 1.3em;">check_circle_outline</mat-icon>
+            <span>{{ bullet }}</span>
+          </li>
         </ul>
-        <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
         <div *ngIf="section.items" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
           <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%" fxLayout="column"
             fxLayoutAlign="space-between">
             <div>
-              <mat-card-title>
-                {{ item.name }}
-              </mat-card-title>
+              <mat-card-title>{{ item.title }}</mat-card-title>
               <mat-chip-list aria-label="Categories">
-                <mat-chip>{{ item.category }}</mat-chip>
+                <mat-chip *ngIf="item.category">{{ item.category }}</mat-chip>
+                <mat-chip *ngIf="item.date">{{ item.date | date }}</mat-chip>
               </mat-chip-list>
-              <mat-card-content style="margin-top: 1em;">{{ item.description }}</mat-card-content>
+              <mat-card-content innerHTML="{{ item.description }}"></mat-card-content>
             </div>
             <mat-card-actions>
               <a mat-button color="primary" href="{{ item.href }}" target="_blank">
@@ -94,42 +94,17 @@
               </a>
             </mat-card-actions>
           </mat-card>
+          <br />
+          <a *ngIf="section.more" href="{{ section.more.href }}" target="_blank" mat-button color="primary">Explore more
+            <mat-icon>open_in_new</mat-icon>
+          </a>
         </div>
-        <div *ngIf="section.id === 'events'" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
-          <mat-card *ngFor="let event of section.events" fxFlex.gt-sm="30%" fxLayout="column"
-            fxLayoutAlign="space-between">
-            <div>
-              <mat-card-title>{{ event.title }}</mat-card-title>
-              <mat-card-subtitle>{{ event.date | date }}</mat-card-subtitle>
-              <mat-card-content innerHTML="{{ event.description }}"></mat-card-content>
-            </div>
-            <mat-card-actions>
-              <a mat-button color="primary" href="{{ event.href }}" target="_blank">
-                <mat-icon>{{ event.icon }}</mat-icon>{{ event.type | titlecase }}
-              </a>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div *ngIf="section.id === 'talks'">
-          <ul>
-            <li *ngFor="let talk of section.talks" innerHTML="{{ talk.description }}"></li>
-          </ul>
-        </div>
-        <ul *ngIf="section.id === 'more'">
-          <li *ngFor="let link of section.links">
-            <a href="{{ link.href }}" target="_blank" mat-button color="primary">{{ link.text }}
-              <mat-icon>open_in_new</mat-icon>
-            </a>
-          </li>
-        </ul>
-        <a *ngIf="section.more" href="{{ section.more.href }}" target="_blank" mat-button color="primary">Explore more
-          <mat-icon>open_in_new</mat-icon>
-        </a>
+        <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
       </section>
     </main>
     <footer>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row"
-        fxLayoutGap.gt-sm="5rem">
+        fxLayoutGap.gt-sm="3rem">
         <a *ngFor="let link of links; let last = last" href="{{ link.href }}" target="_blank">
           <img src="{{ link.img.src }}" alt="{{ link.img.alt }}">
           <mat-divider fxHide.gt-sm *ngIf="!last"></mat-divider>

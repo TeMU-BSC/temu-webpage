@@ -23,12 +23,12 @@ export class AppComponent {
       id: 'goals',
       title: 'Goals',
       firstParagraph: 'The strategic goals of the Text Mining Unit are:',
-      list: [
-        'To design and to develop biomedical language-processing resources with emphasis on oncology.',
-        'To provide consultancy and technical advice for language technologies in the biomedical domain.',
-        'To design requirements and standards for interoperability of biomedical language technologies.',
-        'To coordinate community assessment and evaluation challenges of biomedical text mining tasks.',
-        'To leverage the uptake of biomedical text mining technologies and relevant standards.',
+      bulletItems: [
+        'Design and develop biomedical language-processing resources with emphasis on oncology.',
+        'Provide consultancy and technical advice for language technologies in the biomedical domain.',
+        'Design requirements and standards for interoperability of biomedical language technologies.',
+        'Coordinate community assessment and evaluation challenges of biomedical text mining tasks.',
+        'Leverage the uptake of biomedical text mining technologies and relevant standards.',
       ],
       lastParagraph: 'One of the main scopes of the unit is to provide biomedical text mining and language processing infrastructures that can be maintained efficiently over time and be integrated in biomedical analysis platforms comprising data from experimental outcomes of patient-derived information.',
     },
@@ -37,7 +37,7 @@ export class AppComponent {
       title: 'Campaigns',
       items: [
         {
-          name: 'BARR2',
+          title: 'BARR2',
           description: 'Biomedical Abbreviation Recognition and Resolution (2nd Edition)',
           category: 'Finished',
           icon:'web',
@@ -45,7 +45,7 @@ export class AppComponent {
           href: 'https://temu.bsc.es/BARR2/'
         },
         {
-          name: 'CANTEMIST',
+          title: 'CANTEMIST',
           description: 'Cancer Text Mining Shared Task – tumor named entity recognition',
           category: 'Finished',
           icon:'web',
@@ -53,7 +53,7 @@ export class AppComponent {
           href: 'https://temu.bsc.es/cantemist/'
         },
         {
-          name: 'CODIESP',
+          title: 'CODIESP',
           description: 'Clinical Case Coding in Spanish Shared Task (eHealth CLEF 2020)',
           category: 'Finished',
           icon:'web',
@@ -61,7 +61,7 @@ export class AppComponent {
           href: 'https://temu.bsc.es/codiesp/'
         },
         {
-          name: 'MEDDOCAN',
+          title: 'MEDDOCAN',
           description: 'Medical Document Anonymization',
           category: 'Finished',
           icon:'web',
@@ -69,7 +69,7 @@ export class AppComponent {
           href: 'https://temu.bsc.es/meddocan/'
         },
         {
-          name: 'MESINESP',
+          title: 'MESINESP',
           description: 'Medical Semantic Indexing in Spanish',
           category: 'Finished',
           icon:'web',
@@ -77,7 +77,7 @@ export class AppComponent {
           href: 'https://temu.bsc.es/mesinesp/'
         },
         {
-          name: 'PHARMACONER',
+          title: 'PHARMACONER',
           description: 'Pharmacological Substances, Compounds and proteins and Named Entity Recognition',
           category: 'Finished',
           icon:'web',
@@ -101,7 +101,7 @@ export class AppComponent {
       firstParagraph: 'This section provides links to various types of resources, developed both by TEMU and externally.',
       items: [
         {
-          name: 'FastText Spanish Medical Embeddings',
+          title: 'FastText Spanish Medical Embeddings',
           description: 'Word embeddings generated from Spanish corpora.',
           category: 'Natural Language Processing',
           icon: 'cloud_queue',
@@ -109,7 +109,7 @@ export class AppComponent {
           href: 'https://zenodo.org/record/3744326'
         },
         {
-          name: 'MeSpEn Parallel Corpora',
+          title: 'MeSpEn Parallel Corpora',
           description: 'Heterogeneous health related documents in Spanish and English useful to build parallel corpora for training and evaluating medical machine translation systems.',
           category: 'Corpora',
           icon: 'cloud_queue',
@@ -117,7 +117,7 @@ export class AppComponent {
           href: 'https://zenodo.org/record/3562536'
         },
         {
-          name: 'Neural Machine Translation for the Biomedical Domain - WMT19',
+          title: 'Neural Machine Translation for the Biomedical Domain - WMT19',
           description: 'This package contains the files needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain.',
           category: 'Translation',
           icon: 'cloud_queue',
@@ -125,7 +125,7 @@ export class AppComponent {
           href: 'https://zenodo.org/record/3346802'
         },
         {
-          name: 'SPACCC',
+          title: 'SPACCC',
           description: 'The Spanish Clinical Case Corpus, a collection of 1,000 clinical cases from SciELO.',
           category: 'Corpora',
           icon: 'cloud_queue',
@@ -133,7 +133,7 @@ export class AppComponent {
           href: 'https://zenodo.org/record/2560316'
         },
         {
-          name: 'AbreMES DB',
+          title: 'AbreMES DB',
           description: 'The Spanish Medical Abbreviation Database.',
           category: 'Terminology',
           icon: 'cloud_queue',
@@ -141,7 +141,7 @@ export class AppComponent {
           href: 'https://zenodo.org/record/2207130'
         },
         {
-          name: 'MeSpEn Glossaries',
+          title: 'MeSpEn Glossaries',
           description: 'Bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
           category: 'Terminology',
           icon: 'cloud_queue',
@@ -149,7 +149,7 @@ export class AppComponent {
           href: 'https://zenodo.org/record/2205690'
         },
         {
-          name: 'SPACCC_SPLIT',
+          title: 'SPACCC_SPLIT',
           description: 'A collection of 1,000 clinical cases in Spanish where sentence boundary symbols are marked-up.',
           category: 'Annotated corpora',
           icon: 'code',
@@ -157,7 +157,7 @@ export class AppComponent {
           href: 'https://github.com/PlanTL-SANIDAD/SPACCC_SPLIT'
         },
         {
-          name: 'SPACCC_TOKEN',
+          title: 'SPACCC_TOKEN',
           description: 'A collection of 1,000 clinical cases in Spanish where sentence tokens are marked-up.',
           category: 'Annotated corpora',
           icon: 'code',
@@ -165,7 +165,7 @@ export class AppComponent {
           href: 'https://github.com/PlanTL-SANIDAD/SPACCC_TOKEN'
         },
         {
-          name: 'SPACCC_POS',
+          title: 'SPACCC_POS',
           description: 'A collection of 1,000 clinical cases in Spanish annotated with Part-of-Speech tags.',
           category: 'Annotated corpora',
           icon: 'code',
@@ -180,7 +180,7 @@ export class AppComponent {
       title: 'Tools',
       items: [
         {
-          name: 'Medical PoS tagger',
+          title: 'Medical PoS tagger',
           description: 'A Part-of-Speech Tagger for medical domain corpus in Spanish based on FreeLing.',
           category: 'Natural Language Processing',
           icon: 'code',
@@ -188,7 +188,7 @@ export class AppComponent {
           href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS-TAGGER'
         },
         {
-          name: 'Medical Negation Detection',
+          title: 'Medical Negation Detection',
           description: 'A system for negation detection in Spanish clinical texts based on Wendy Chapman\'s NegEx algorithm.',
           category: 'Natural Language Processing',
           icon: 'code',
@@ -196,7 +196,7 @@ export class AppComponent {
           href: 'https://github.com/PlanTL-SANIDAD/NegEx-MES'
         },
         {
-          name: 'Medical Abbreviation extractor',
+          title: 'Medical Abbreviation extractor',
           description: 'Software used to generate a database of abbreviations in the Spanish medical domain.',
           category: 'Other tools',
           icon: 'code',
@@ -209,7 +209,7 @@ export class AppComponent {
     {
       id: 'events',
       title: 'Events',
-      events: [
+      items: [
         {
           date: new Date('2019-12-02'),
           title: 'Infoday sobre tecnologías del lenguaje en sanidad y biomedicina',
@@ -263,33 +263,44 @@ export class AppComponent {
     {
       id: 'talks',
       title: 'Talks',
-      talks: [
-        { description: `Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.; Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and Krallinger, M. <b>Mining Spanish and Catalan Electronic Health Records: Extraction of Information on Diagnosis of Stroke from Discharge Reports.</b> In <i>3rd European Conference on Translational Bioinformatics: Biomedical Big Data Supporting Precision Medicine</i>, 2018.` },
+      items: [
+        {
+          title: 'Mining Spanish and Catalan Electronic Health Records: Extraction of Information on Diagnosis of Stroke from Discharge Reports',
+          description: `Authors: Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.; Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and Krallinger, M. <br/><br/> Participation in the <a href="http://www.bioinformaticsbarcelona.eu/events/41/3rd-european-conference-on-translational-bioinformatics-biomedical-big-data-supporting-precision-medicine">3rd European Conference on Translational Bioinformatics: Biomedical Big Data Supporting Precision Medicine</a>, 2018.`,
+          category: 'Talk',
+          icon: 'receipt_long',
+          type: 'paper',
+          href: 'https://www.researchgate.net/publication/327861444_016_MINING_SPANISH_AND_CATALAN_ELECTRONIC_HEALTH_RECORDS_EXTRACTION_OF_INFORMATION_ON_DIAGNOSIS_OF_STROKE_FROM_DISCHARGE_REPORTS',
+        },
       ]
     },
     {
       id: 'more',
       title: 'More about us',
-      links: [
+      items: [
         {
-          id: 'people',
-          text: 'Our staff',
+          title: 'More about TEMU at BSC',
+          icon: 'info',
+          type: 'read more from us',
+          href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining',
+        },
+        {
+          title: 'Who we are',
+          icon: 'people',
+          type: 'get to know our staff',
           href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-people',
         },
         {
-          id: 'publications',
-          text: 'Our publications',
+          title: 'What we have published',
+          icon: 'receipt_long',
+          type: 'discover our publications',
           href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-publications',
         },
         {
-          id: 'demos',
-          text: 'Our online demos',
+          title: 'Our web demos',
+          icon: 'public',
+          type: 'play with our demos',
           href: 'https://temu.bsc.es/demos/',
-        },
-        {
-          id: 'temu',
-          text: 'More about TEMU at BSC',
-          href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining',
         },
       ]
     },

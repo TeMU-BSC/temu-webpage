@@ -39,50 +39,44 @@ export class AppComponent {
         {
           title: 'BARR2',
           description: 'Biomedical Abbreviation Recognition and Resolution (2nd Edition)',
-          category: 'Finished',
-          icon:'web',
-          type: 'web',
-          href: 'https://temu.bsc.es/BARR2/'
+          flag: 'Finished',
+          linkText: 'Visit the website',
+          href: 'https://temu.bsc.es/BARR2/',
         },
         {
           title: 'CANTEMIST',
           description: 'Cancer Text Mining Shared Task – tumor named entity recognition',
-          category: 'Finished',
-          icon:'web',
-          type: 'web',
-          href: 'https://temu.bsc.es/cantemist/'
+          flag: 'Finished',
+          linkText: 'Visit the website',
+          href: 'https://temu.bsc.es/cantemist/',
         },
         {
           title: 'CODIESP',
           description: 'Clinical Case Coding in Spanish Shared Task (eHealth CLEF 2020)',
-          category: 'Finished',
-          icon:'web',
-          type: 'web',
-          href: 'https://temu.bsc.es/codiesp/'
+          flag: 'Finished',
+          linkText: 'Visit the website',
+          href: 'https://temu.bsc.es/codiesp/',
         },
         {
           title: 'MEDDOCAN',
           description: 'Medical Document Anonymization',
-          category: 'Finished',
-          icon:'web',
-          type: 'web',
-          href: 'https://temu.bsc.es/meddocan/'
+          flag: 'Finished',
+          linkText: 'Visit the website',
+          href: 'https://temu.bsc.es/meddocan/',
         },
         {
           title: 'MESINESP',
           description: 'Medical Semantic Indexing in Spanish',
-          category: 'Finished',
-          icon:'web',
-          type: 'web',
-          href: 'https://temu.bsc.es/mesinesp/'
+          flag: 'Finished',
+          linkText: 'Visit the website',
+          href: 'https://temu.bsc.es/mesinesp/',
         },
         {
           title: 'PHARMACONER',
           description: 'Pharmacological Substances, Compounds and proteins and Named Entity Recognition',
-          category: 'Finished',
-          icon:'web',
-          type: 'web',
-          href: 'https://temu.bsc.es/pharmaconer/'
+          flag: 'Finished',
+          linkText: 'Visit the website',
+          href: 'https://temu.bsc.es/pharmaconer/',
         },
 
         // Antonio Miranda commented on 2020-06-17:
@@ -103,74 +97,65 @@ export class AppComponent {
         {
           title: 'FastText Spanish Medical Embeddings',
           description: 'Word embeddings generated from Spanish corpora.',
-          category: 'Natural Language Processing',
-          icon: 'cloud_queue',
-          type: 'zenodo',
-          href: 'https://zenodo.org/record/3744326'
+          flag: 'Natural Language Processing',
+          linkText: 'Check the release',
+          href: 'https://zenodo.org/record/3744326',
         },
         {
           title: 'MeSpEn Parallel Corpora',
           description: 'Heterogeneous health related documents in Spanish and English useful to build parallel corpora for training and evaluating medical machine translation systems.',
-          category: 'Corpora',
-          icon: 'cloud_queue',
-          type: 'zenodo',
-          href: 'https://zenodo.org/record/3562536'
+          flag: 'Corpora',
+          linkText: 'Check the release',
+          href: 'https://zenodo.org/record/3562536',
         },
         {
           title: 'Neural Machine Translation for the Biomedical Domain - WMT19',
           description: 'This package contains the files needed to use the Neural Machine Translation (NMT) system for the Biomedical Domain.',
-          category: 'Translation',
-          icon: 'cloud_queue',
-          type: 'zenodo',
-          href: 'https://zenodo.org/record/3346802'
+          flag: 'Translation',
+          linkText: 'Check the release',
+          href: 'https://zenodo.org/record/3346802',
         },
         {
           title: 'SPACCC',
           description: 'The Spanish Clinical Case Corpus, a collection of 1,000 clinical cases from SciELO.',
-          category: 'Corpora',
-          icon: 'cloud_queue',
-          type: 'zenodo',
-          href: 'https://zenodo.org/record/2560316'
+          flag: 'Corpora',
+          linkText: 'Check the release',
+          href: 'https://zenodo.org/record/2560316',
         },
         {
           title: 'AbreMES DB',
           description: 'The Spanish Medical Abbreviation Database.',
-          category: 'Terminology',
-          icon: 'cloud_queue',
-          type: 'zenodo',
-          href: 'https://zenodo.org/record/2207130'
+          flag: 'Terminology',
+          linkText: 'Check the release',
+          href: 'https://zenodo.org/record/2207130',
         },
         {
           title: 'MeSpEn Glossaries',
           description: 'Bilingual medical glossaries for various language pairs generated from free online medical glossaries and dictionaries made by professional translators.',
-          category: 'Terminology',
-          icon: 'cloud_queue',
-          type: 'zenodo',
-          href: 'https://zenodo.org/record/2205690'
+          flag: 'Terminology',
+          linkText: 'Check the release',
+          href: 'https://zenodo.org/record/2205690',
         },
         {
           title: 'SPACCC_SPLIT',
           description: 'A collection of 1,000 clinical cases in Spanish where sentence boundary symbols are marked-up.',
-          category: 'Annotated corpora',
-          icon: 'code',
-          type: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_SPLIT'
+          flag: 'Annotated corpora',
+          linkText: 'Go to the repo',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_SPLIT',
         },
         {
           title: 'SPACCC_TOKEN',
           description: 'A collection of 1,000 clinical cases in Spanish where sentence tokens are marked-up.',
-          category: 'Annotated corpora',
-          icon: 'code',
-          type: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_TOKEN'
+          flag: 'Annotated corpora',
+          linkText: 'Go to the repo',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_TOKEN',
         },
         {
           title: 'SPACCC_POS',
           description: 'A collection of 1,000 clinical cases in Spanish annotated with Part-of-Speech tags.',
-          category: 'Annotated corpora',
-          icon: 'code',
-          type: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS'
+          flag: 'Annotated corpora',
+          linkText: 'Go to the repo',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS',
         },
       ],
       more: this.links.find(link => link.id === 'zenodo')
@@ -182,26 +167,23 @@ export class AppComponent {
         {
           title: 'Medical PoS tagger',
           description: 'A Part-of-Speech Tagger for medical domain corpus in Spanish based on FreeLing.',
-          category: 'Natural Language Processing',
-          icon: 'code',
-          type: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS-TAGGER'
+          flag: 'Natural Language Processing',
+          linkText: 'Go to the repo',
+          href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS-TAGGER',
         },
         {
           title: 'Medical Negation Detection',
           description: 'A system for negation detection in Spanish clinical texts based on Wendy Chapman\'s NegEx algorithm.',
-          category: 'Natural Language Processing',
-          icon: 'code',
-          type: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/NegEx-MES'
+          flag: 'Natural Language Processing',
+          linkText: 'Go to the repo',
+          href: 'https://github.com/PlanTL-SANIDAD/NegEx-MES',
         },
         {
           title: 'Medical Abbreviation extractor',
           description: 'Software used to generate a database of abbreviations in the Spanish medical domain.',
-          category: 'Other tools',
-          icon: 'code',
-          type: 'github',
-          href: 'https://github.com/PlanTL-SANIDAD/AbreMES-X'
+          flag: 'Other tools',
+          linkText: 'Go to the repo',
+          href: 'https://github.com/PlanTL-SANIDAD/AbreMES-X',
         },
       ],
       more: this.links.find(link => link.id === 'github')
@@ -214,49 +196,43 @@ export class AppComponent {
           date: new Date('2019-12-02'),
           title: 'Infoday sobre tecnologías del lenguaje en sanidad y biomedicina',
           description: `Dissemination of the initiatives launched by the TL Plan, as well as the collaborations and results generated in the health sector.`,
-          icon: 'event',
-          type: 'event',
-          href: 'https://www.bsc.es/news/events/infoday-sobre-tecnolog%C3%ADas-del-lenguaje-en-sanidad-y-biomedicina'
+          linkText: 'See event details',
+          href: 'https://www.bsc.es/news/events/infoday-sobre-tecnolog%C3%ADas-del-lenguaje-en-sanidad-y-biomedicina',
         },
         {
           date: new Date('2018-09-19'),
           title: 'Infoday about Language Technologies in Healthcare',
           description: `Infoday on actions of the Plan TL in Healthcare at <a href="http://www.sepln2018.com/">SEPLN-2018</a>.`,
-          icon: 'event',
-          type: 'event',
-          href: 'http://www.agendadigital.gob.es/tecnologias-lenguaje/comunicacion-formacion/eventos/Paginas/Infoday-2018-Plan-TL-y-Sanidad.aspx'
+          linkText: 'See event details',
+          href: 'http://www.agendadigital.gob.es/tecnologias-lenguaje/comunicacion-formacion/eventos/Paginas/Infoday-2018-Plan-TL-y-Sanidad.aspx',
         },
         {
           date: new Date('2018-09-18'),
           title: 'BARR2',
           description: `Biomedical Abbreviation Recognition and Resolution 2nd Edition <a href="https://sites.google.com/view/ibereval-2018">IberEval workshop</a> at <a href="http://www.sepln2018.com/">SEPLN-2018</a>.`,
-          icon: 'event',
-          type: 'event',
-          href: 'https://sites.google.com/view/ibereval-2018'
+          linkText: 'See event details',
+          href: 'https://sites.google.com/view/ibereval-2018',
         },
         {
           date: new Date('2018-05-09'),
           title: 'MultilingualBio',
           description: `Multilingual Biomedical Text Processing Workshop at <a href="http://lrec2018.lrec-conf.org/en/">LREC-2018</a>.`,
-          icon: 'event',
-          type: 'event',
-          href: 'https://multilingualbio.bsc.es/'
+          linkText: 'See event details',
+          href: 'https://multilingualbio.bsc.es/',
         },
         {
           date: new Date('2018-02-27'),
           title: 'II Hackathon de Tecnologías del Lenguaje en $YFN',
           description: `Hackathon to promote the development of prototypes based on NLP, MT and conversational systems.`,
-          icon: 'event',
-          type: 'event',
-          href: 'https://www.hackathonplantl.es/'
+          linkText: 'See event details',
+          href: 'https://www.hackathonplantl.es/',
         },
         {
           date: new Date('2017-09-19'),
           title: 'BARR',
           description: `Biomedical Abbreviation Recognition and Resolution <a href="http://cabrillo.lsi.uned.es/nlp/IberEval-2017/">IberEval workhop</a> at <a href="http://sepln2017.um.es/">SEPLN-2017</a>.`,
-          icon: 'event',
-          type: 'event',
-          href: 'http://temu.bsc.es/BARR'
+          linkText: 'See event details',
+          href: 'http://temu.bsc.es/BARR',
         },
       ]
     },
@@ -266,10 +242,9 @@ export class AppComponent {
       items: [
         {
           title: 'Mining Spanish and Catalan Electronic Health Records: Extraction of Information on Diagnosis of Stroke from Discharge Reports',
-          description: `Authors: Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.; Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and Krallinger, M. <br/><br/> Participation in the <a href="http://www.bioinformaticsbarcelona.eu/events/41/3rd-european-conference-on-translational-bioinformatics-biomedical-big-data-supporting-precision-medicine">3rd European Conference on Translational Bioinformatics: Biomedical Big Data Supporting Precision Medicine</a>, 2018.`,
-          category: 'Talk',
-          icon: 'receipt_long',
-          type: 'paper',
+          description: `Authors: Gonzalez-Agirre, A.; Vivanco-Hidalgo, R.M.; Abilleira, S.; Gallofré, M.; Valencia, A.; Villegas, M. and Krallinger, M. <br/><br/> Participation in the <a href="http://www.bioinformaticsbarcelona.eu/events/41/3rd-european-conference-on-translational-bioinformatics-biomedical-big-data-supporting-precision-medicine" class="animated-underline">3rd European Conference on Translational Bioinformatics: Biomedical Big Data Supporting Precision Medicine</a>, 2018.`,
+          flag: 'Talk',
+          linkText: 'View publication',
           href: 'https://www.researchgate.net/publication/327861444_016_MINING_SPANISH_AND_CATALAN_ELECTRONIC_HEALTH_RECORDS_EXTRACTION_OF_INFORMATION_ON_DIAGNOSIS_OF_STROKE_FROM_DISCHARGE_REPORTS',
         },
       ]
@@ -279,27 +254,23 @@ export class AppComponent {
       title: 'More about us',
       items: [
         {
-          title: 'More about TEMU at BSC',
-          icon: 'info',
-          type: 'read more from us',
+          title: 'More about our unit',
+          linkText: 'Read more from us',
           href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining',
         },
         {
           title: 'Who we are',
-          icon: 'people',
-          type: 'get to know our staff',
+          linkText: 'Get to know our staff',
           href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-people',
         },
         {
           title: 'What we have published',
-          icon: 'receipt_long',
-          type: 'discover our publications',
+          linkText: 'Discover our publications',
           href: 'https://www.bsc.es/discover-bsc/organisation/scientific-structure/text-mining/team-publications',
         },
         {
           title: 'Our web demos',
-          icon: 'public',
-          type: 'play with our demos',
+          linkText: 'Play with our demos',
           href: 'https://temu.bsc.es/demos/',
         },
       ]

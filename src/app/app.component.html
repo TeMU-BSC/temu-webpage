@@ -28,42 +28,48 @@
       </mat-nav-list>
     </mat-toolbar>
     <main class="main" ngClass.gt-sm="main-desktop">
-      <h1 class="heading"><span class="plantl-color">Biomedical</span> Text Mining Unit</h1>
-      <p class="secondary">OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
+      <h1 class="heading"><span class="primary-color">Biomedical</span> Text Mining Unit</h1>
+      <p class="secondary-color">OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
       <section class="section" fxLayout="column" fxLayout.gt-sm fxLayoutGap="1rem">
-        <mat-card fxFlex.gt-sm="50%">
-          <img src="assets/images/BSC-blue.svg" alt="BSC logo" class="hero-image">
-          <p>
-            The Text Mining Unit (TEMU) at Barcelona Super Computing Center focuses on the application and development
-            of biomedical text mining technologies, which are becoming a key tool for the efficient exploitation of
-            information contained in unstructured data repositories including the scientific literature, electronic
-            health records (EHRs), patents, biobank metadata, clinical trials and social media.
-          </p>
-          <p>
-            The unit has a particular interest in processing clinical documents written in Spanish and other co-official
-            languages in the area of health-related topics and the integration of molecular and biological information
-            derived from the literature.
-          </p>
-          <a href="https://www.bsc.es/" target="_blank" mat-button color="primary">BSC website
-            <mat-icon>open_in_new</mat-icon>
-          </a>
+        <mat-card fxFlex.gt-sm="50%" fxLayout="column" fxLayoutAlign="space-between">
+          <div>
+            <img src="assets/images/BSC-blue.svg" alt="BSC logo" class="hero-image">
+            <mat-card-content>
+              <p>
+                The Text Mining Unit (TEMU) at Barcelona Supercomputing Center (BSC) focuses on the application and
+                development of biomedical text mining technologies, which are becoming a key tool for the efficient
+                exploitation of information contained in unstructured data repositories including the scientific
+                literature, electronic health records (EHRs), patents, biobank metadata, clinical trials and social
+                media.
+              </p>
+              <p>
+                The unit has a particular interest in processing clinical documents written in Spanish and other
+                co-official languages in the area of health-related topics and the integration of molecular and
+                biological information derived from the literature.
+              </p>
+            </mat-card-content>
+          </div>
+          <mat-card-actions>
+            <a href="https://www.bsc.es/" class="animated-underline">Visit BSC website</a>
+          </mat-card-actions>
         </mat-card>
-        <mat-card fxFlex.gt-sm="50%">
-          <img src="assets/images/plantl.png" alt="Plan TL logo" class="hero-image">
-          <p>The unit is fully funded through the
-            <span class="spanish">Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan TL)</span>
-            , in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC and the
-            <span class="spanish">
-              <a href="https://www.mineco.gob.es" target="_blank">Ministerio de Asuntos Económicos y Transformación Digital</a>
-            </span>.
-          </p>
-          <a href="https://www.plantl.gob.es/" target="_blank" mat-button color="primary">Plan TL website
-            <mat-icon>open_in_new</mat-icon>
-          </a>
+        <mat-card fxFlex.gt-sm="50%" fxLayout="column" fxLayoutAlign="space-between">
+          <div>
+            <img src="assets/images/plantl.png" alt="Plan TL logo" class="hero-image">
+            <mat-card-content>The unit is fully funded through the
+              <span class="spanish">Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan
+                TL)</span>
+              , in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC and the
+              <span class="spanish">Ministerio de Asuntos Económicos y Transformación Digital</span>.
+            </mat-card-content>
+          </div>
+          <mat-card-actions>
+            <a href="https://www.plantl.gob.es/" class="animated-underline">Visit Plan TL website</a>
+          </mat-card-actions>
         </mat-card>
       </section>
       <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
-        <h2 *ngIf="section.title" class="heading plantl-color" fxLayoutAlign="start center">
+        <h2 *ngIf="section.title" class="heading primary-color" fxLayoutAlign="start center">
           <span>{{ section.title }}</span>
           <a mat-icon-button href="#{{ section.id }}" class="heading-link"
             [cdkCopyToClipboard]="getAnchorUrl(section.id)" matTooltip="Copy heading link" matTooltipPosition="above">
@@ -73,7 +79,7 @@
         <p *ngIf="section.firstParagraph">{{ section.firstParagraph }}</p>
         <ul *ngIf="section.bulletItems">
           <li *ngFor="let bullet of section.bulletItems">
-            <mat-icon class="plantl-color" style="font-size: 1.3em;">check_circle_outline</mat-icon>
+            <mat-icon class="primary-color" style="font-size: 1.3em;">check_circle_outline</mat-icon>
             <span>{{ bullet }}</span>
           </li>
         </ul>
@@ -82,22 +88,18 @@
             fxLayoutAlign="space-between">
             <div>
               <mat-card-title>{{ item.title }}</mat-card-title>
-              <mat-chip-list aria-label="Categories">
-                <mat-chip *ngIf="item.category">{{ item.category }}</mat-chip>
+              <mat-chip-list aria-label="Flags">
+                <mat-chip *ngIf="item.flag">{{ item.flag }}</mat-chip>
                 <mat-chip *ngIf="item.date">{{ item.date | date }}</mat-chip>
               </mat-chip-list>
               <mat-card-content innerHTML="{{ item.description }}"></mat-card-content>
             </div>
             <mat-card-actions>
-              <a mat-button color="primary" href="{{ item.href }}" target="_blank">
-                <mat-icon>{{ item.icon }}</mat-icon>{{ item.type | titlecase }}
-              </a>
+              <a href="{{ item.href }}" class="animated-underline">{{ item.linkText }}</a>
             </mat-card-actions>
           </mat-card>
           <br />
-          <a *ngIf="section.more" href="{{ section.more.href }}" target="_blank" mat-button color="primary">Explore more
-            <mat-icon>open_in_new</mat-icon>
-          </a>
+          <a *ngIf="section.more" href="{{ section.more.href }}">Explore more</a>
         </div>
         <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
       </section>
@@ -105,7 +107,7 @@
     <footer>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row"
         fxLayoutGap.gt-sm="3rem">
-        <a *ngFor="let link of links; let last = last" href="{{ link.href }}" target="_blank">
+        <a *ngFor="let link of links; let last = last" href="{{ link.href }}">
           <img src="{{ link.img.src }}" alt="{{ link.img.alt }}">
           <mat-divider fxHide.gt-sm *ngIf="!last"></mat-divider>
         </a>

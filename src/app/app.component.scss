@@ -1,4 +1,14 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
+
+$plantl-color: #298daf;
+$secondary-color: #666666;
+
+.primary-color {
+  color: $plantl-color;
+}
+.secondary-color {
+  color: $secondary-color;
+}
 
 .mat-card {
   margin: 1rem 0;
@@ -16,26 +26,21 @@
   .mat-card-content {
     margin-top: 1em;
   }
-}
 
+  mat-card-actions {
+    padding: 0 0.6em;
+  }
+}
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.mat-list-base {
-  padding-top: 0;
-}
-
 .temu-logo {
   color: inherit;
   text-decoration: none;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   font-weight: 600;
-}
-
-.plantl-color {
-  color: #298daf;
 }
 
 .sidenav-container {
@@ -76,10 +81,6 @@ h2.heading {
   padding: 64px 20vw;
 }
 
-.secondary {
-  color: #666666;
-}
-
 .section {
   padding-top: 64px;
 }
@@ -97,12 +98,11 @@ h2.heading {
 
 .heading-link {
   cursor: pointer;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .heading .heading-link {
   visibility: hidden;
-  // float: right;
 }
 
 .heading:hover .heading-link {
@@ -110,19 +110,18 @@ h2.heading {
 }
 
 li {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 footer {
   font-size: small;
-  // background-color: #bbbbbb;
   background-color: white;
   padding: 1rem;
 
   img {
     max-width: 266px;
     height: 72px;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     filter: grayscale(100%);
   }
 
@@ -132,13 +131,11 @@ footer {
 }
 
 .mat-chip {
-  // background-color: inherit;
-  // border: 1px solid #666666;
   color: #666666;
   padding: 0 4px;
   border-radius: 4px;
   min-height: 21px;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .mat-button,
@@ -149,17 +146,27 @@ footer {
 .header-links {
   font-size: small;
   font-weight: bolder;
-  // color: #1a1a1a;
-}
-
-a.mat-button {
-  padding: 0;
-}
-
-a mat-icon {
-  margin-right: .5rem;
 }
 
 ul {
   list-style-type: none;
+}
+
+// https://stackoverflow.com/a/56839267
+a {
+  text-decoration: none;
+  color: $plantl-color;
+  display: inline-block;
+}
+a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: $plantl-color;
+  display: block;
+  transition: width 0.5s ease;
+}
+a:hover::after,
+a:focus::after {
+  width: 100%;
 }

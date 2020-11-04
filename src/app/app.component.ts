@@ -47,7 +47,7 @@ export class AppComponent {
         {
           name: 'CANTEMIST',
           description: 'Cancer Text Mining Shared Task – tumor named entity recognition',
-          category: 'Ongoing',
+          category: 'Finished',
           icon:'web',
           type: 'web',
           href: 'https://temu.bsc.es/cantemist/'
@@ -85,15 +85,14 @@ export class AppComponent {
           href: 'https://temu.bsc.es/pharmaconer/'
         },
 
-        // Antonio's comments on campañas de evaluación (2020-06-17):
-        // seguro: pharmaconer, mesinesp, meddocan, codiesp, cantemist
-        // biocreative (es una campaña muy antigua, del cnio, creo que solo participó martin en eso)
-        // iberlegal (es una campaña de la gente del plan que no es de Sanidad, pero les montamos un Brat)
-        // smm4h-spanish, medtrans, medtermmap (campañas que no llegaron a salir)
-        // pathovir (acaba de empezar, todavía no es seguro que llegue a convertirse en campaña)
-        // dudo: BARR, BARR2, multilingualbio2018, multilingualbio2020, wmt-terminologies
-
-        //     $ ls /var/www/html/
+        // Antonio Miranda commented on 2020-06-17:
+        // - campañas de evaluación: pharmaconer, mesinesp, meddocan, codiesp, cantemist
+        // - biocreative es una campaña muy antigua, del cnio, creo que solo participó Martin en eso
+        // - iberlegal es una campaña de la gente del Plan TL que no es de Sanidad, pero les montamos un Brat
+        // - campañas que no llegaron a salir: smm4h-spanish, medtrans, medtermmap
+        // - pathovir acaba de empezar, todavía no es seguro que llegue a convertirse en campaña
+        // - dudo: BARR, BARR2, multilingualbio2018, multilingualbio2020, wmt-terminologies
+        // $ ls /var/www/html/
       ]
     },
     {

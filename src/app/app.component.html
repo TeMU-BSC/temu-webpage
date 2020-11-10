@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer mode="over" class="sidenav" fixedInViewport>
+  <mat-sidenav #drawer mode="over" class="sidenav">
     <mat-toolbar>
       <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
@@ -105,17 +105,19 @@
       </section>
     </main>
     <footer>
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row"
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row wrap"
         fxLayoutGap.gt-sm="3rem">
-        <a *ngFor="let link of links; let last = last" href="{{ link.href }}">
-          <img src="{{ link.img.src }}" alt="{{ link.img.alt }}">
-          <mat-divider fxHide.gt-sm *ngIf="!last"></mat-divider>
+        <a *ngFor="let link of links" href="{{ link.href }}" title="{{ link.title }}">
+          <img src="{{ link.img.src }}" alt="{{ link.img.alt }}"
+            [style.margin-left]="link.id === 'zenodo' ? '-1.5em' : '0'">
+          <mat-divider></mat-divider>
         </a>
       </div>
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" style="margin-top: 2rem;">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" style="margin-top: 3rem;">
         <span>
-          This website was launched on December 2018 and redisigned with the Material Design guidelines later on
-          June 2020 by <a href="https://github.com/aasensios">Alejandro Asensio</a>.
+          This website was initially launched on December 2018 and redisigned with the
+          <a href="https://material.io/">Material Design</a> guidelines later on June 2020 by
+          <a href="https://github.com/aasensios">Alejandro Asensio</a>.
         </span>
       </div>
     </footer>

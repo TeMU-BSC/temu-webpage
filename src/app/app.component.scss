@@ -2,12 +2,25 @@
 
 $plantl-color: #298daf;
 $secondary-color: #666666;
+$mat-toolbar-height: 64px;
 
 .primary-color {
   color: $plantl-color;
 }
 .secondary-color {
   color: $secondary-color;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 17rem;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
 }
 
 .mat-card {
@@ -43,18 +56,6 @@ $secondary-color: #666666;
   font-weight: 600;
 }
 
-.sidenav-container {
-  height: 100%;
-}
-
-.sidenav {
-  width: 17rem;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
 .mat-toolbar {
   position: sticky;
   top: 0;
@@ -74,15 +75,15 @@ h2.heading {
 }
 
 .main {
-  padding: 64px 1.5rem;
+  padding: $mat-toolbar-height 1.5rem;
 }
 
 .main-desktop {
-  padding: 64px 20vw;
+  padding: $mat-toolbar-height 20vw;
 }
 
 .section {
-  padding-top: 64px;
+  padding-top: $mat-toolbar-height;
 }
 
 .hero-image {

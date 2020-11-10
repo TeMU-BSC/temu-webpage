@@ -11,11 +11,51 @@ export class AppComponent {
   getAnchorUrl = (sectionId: string) => `${window.location.origin}#${sectionId}`;
 
   links = [
-    { id: 'plantl', href: 'https://www.plantl.gob.es/', img: { src: 'assets/images/plantl.png', alt: 'Plan TL logo' } },
-    { id: 'sead', href: 'https://avancedigital.gob.es/', img: { src: 'assets/images/estado_digital_teleco.gif', alt: 'SEAD logo' } },
-    { id: 'bsc', href: 'https://www.bsc.es/', img: { src: 'assets/images/BSC-blue.svg', alt: 'BSC logo' } },
-    { id: 'github', href: 'https://github.com/PlanTL-SANIDAD', img: { src: 'assets/images/GitHub_Logo.png', alt: 'GitHub logo' } },
-    { id: 'zenodo', href: 'https://zenodo.org/communities/medicalnlp/', img: { src: 'assets/images/zenodo-black-border.svg', alt: 'Zenodo logo' } },
+    {
+      id: 'bsc',
+      href: 'https://www.bsc.es/',
+      title: 'Barcelona Supercomputing Center',
+      img: {
+        src: 'assets/images/BSC-blue.svg',
+        alt: 'BSC logo',
+      }
+    },
+    {
+      id: 'plantl',
+      href: 'https://www.plantl.gob.es/',
+      title: 'Plan de Impulso de las Tecnologías del Lenguaje',
+      img: {
+        src: 'assets/images/plantl.png',
+        alt: 'Plan TL logo',
+      }
+    },
+    {
+      id: 'sead',
+      href: 'https://avancedigital.gob.es/',
+      title: 'Digitalisation and Artificial Intelligence - Telecommunications and Digital Infrastructure',
+      img: {
+        src: 'assets/images/estado_digital_teleco.gif',
+        alt: 'SEAD logo',
+      }
+    },
+    {
+      id: 'zenodo',
+      href: 'https://zenodo.org/communities/medicalnlp/',
+      title: 'Medical NLP community at Zenodo',
+      img: {
+        src: 'assets/images/zenodo-black-border.svg',
+        alt: 'Zenodo logo',
+      }
+    },
+    {
+      id: 'github',
+      href: 'https://github.com/PlanTL-SANIDAD',
+      title: 'Plan TL repositories at GitHub',
+      img: {
+        src: 'assets/images/GitHub_Logo.png',
+        alt: 'GitHub logo',
+      }
+    },
   ];
 
   sections = [

@@ -1,8 +1,9 @@
 @import "~@angular/material/theming";
 
 $plantl-color: #298daf;
-$secondary-color: #666666;
-$mat-toolbar-height: 64px;
+$secondary-color: #80868b;
+$almost-white: #f8f9fa;
+$mat-toolbar-height: 4em;
 
 .primary-color {
   color: $plantl-color;
@@ -19,59 +20,33 @@ $mat-toolbar-height: 64px;
   width: 17rem;
 }
 
-.sidenav .mat-toolbar {
-  background: inherit;
+.h1 {
+  font-weight: 900;
+  font-size: 2.25em;
+  line-height: 1em;
 }
 
-.mat-card {
-  margin: 1rem 0;
+.h2 {
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: $mat-toolbar-height;
 
-  &:hover {
-    @include mat-elevation(8);
+  .anchor-link {
+    margin-left: .25em;
+    visibility: hidden;
   }
 
-  .mat-card-title {
-    font-size: large;
-    font-weight: bold;
-    margin-bottom: 1em;
+  &:hover .anchor-link {
+    color: inherit;
+    visibility: visible;
   }
-
-  .mat-card-content {
-    margin-top: 1em;
-  }
-
-  mat-card-actions {
-    padding: 0 0.6em;
-  }
-}
-
-.spacer {
-  flex: 1 1 auto;
 }
 
 .temu-logo {
-  color: inherit;
+  color: $secondary-color;
   text-decoration: none;
-  margin-left: 0.5rem;
-  font-weight: 600;
-}
-
-.mat-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background-color: white;
-}
-
-h1.heading {
-  font-size: 3em;
-  font-weight: bold;
-  line-height: 3rem;
-}
-
-h2.heading {
-  font-size: 2em;
-  font-weight: 700;
+  margin-left: 1em;
+  margin-right: 5em;
 }
 
 .main {
@@ -86,48 +61,116 @@ h2.heading {
   padding-top: $mat-toolbar-height;
 }
 
-.hero-image {
-  height: 5rem;
-  width: auto;
-  max-width: 100%;
-  padding: 1rem 0;
-}
-
 .spanish {
   font-style: italic;
 }
 
-.heading-link {
-  cursor: pointer;
-  margin-left: 0.5rem;
+.footer img {
+  max-height: 6em;
+  width: auto;
+  margin: .5rem 0;
+  filter: grayscale(100%);
 }
 
-.heading .heading-link {
-  visibility: hidden;
+.header-links {
+  font-weight: bolder;
 }
 
-.heading:hover .heading-link {
-  visibility: visible;
+ul {
+  list-style-type: none;
+
+  li {
+    padding: .5em 0;
+
+    mat-icon {
+      color: $plantl-color;
+      font-size: 1.4em;
+    }
+  }
 }
 
-li {
-  margin-bottom: 0.5rem;
+
+.flag {
+  font-weight: bolder;
+  color: $plantl-color;
+
+  &::after {
+    content: "·";
+    display: inline-block;
+    margin: 0 .5em;
+    color: black;
+  }
 }
 
-footer {
-  font-size: small;
+// https://stackoverflow.com/a/56839267
+.animated-underline a {
+  text-decoration: none;
+  color: $plantl-color;
+  display: inline-block;
+}
+.animated-underline a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: $plantl-color;
+  display: block;
+  transition: width .5s ease;
+}
+.animated-underline a:hover::after,
+.animated-underline a:focus::after {
+  width: 100%;
+}
+
+.explore-more {
+  padding: 1.5em;
+
+  &:hover {
+    @include mat-elevation(4);
+  }
+}
+
+// Override defaults of Angular Material classes
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: white;
-  padding: 1rem;
+}
 
-  img {
-    max-width: 266px;
-    height: 72px;
-    margin: 0.5rem 0;
-    filter: grayscale(100%);
+.mat-list-base {
+  padding-top: 0;
+}
+
+.mat-drawer-container {
+  background-color: white;
+}
+
+.mat-card {
+  border-radius: .5em;
+  margin: 1rem 0;
+
+  // @include mat-elevation(0);
+
+  &:hover {
+    @include mat-elevation(4);
   }
 
-  mat-divider {
-    width: 266px;
+  .mat-card-title {
+    font-weight: 300;
+    line-height: 1.125em;
+    margin-top: .5em;
+  }
+
+  .mat-card-image {
+    padding: 1em;
+    max-height: 6em;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .mat-card-footer {
+    padding: 1em;
   }
 }
 
@@ -136,38 +179,5 @@ footer {
   padding: 0 4px;
   border-radius: 4px;
   min-height: 21px;
-  font-size: 0.9em;
-}
-
-.mat-button,
-.mat-raised-button {
-  font-weight: 700;
-}
-
-.header-links {
-  font-size: small;
-  font-weight: bolder;
-}
-
-ul {
-  list-style-type: none;
-}
-
-// https://stackoverflow.com/a/56839267
-a {
-  text-decoration: none;
-  color: $plantl-color;
-  display: inline-block;
-}
-a::after {
-  content: "";
-  width: 0;
-  height: 2px;
-  background-color: $plantl-color;
-  display: block;
-  transition: width 0.5s ease;
-}
-a:hover::after,
-a:focus::after {
-  width: 100%;
+  font-size: .9em;
 }

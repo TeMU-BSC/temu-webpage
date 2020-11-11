@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core'
 // import { MatBottomSheetModule } from '@angular/material/bottom-sheet'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
-import { MatChipsModule } from '@angular/material/chips'
+// import { MatChipsModule } from '@angular/material/chips'
 // import { MatDatepickerModule } from '@angular/material/datepicker'
 // import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { MatDividerModule } from '@angular/material/divider'
@@ -39,7 +39,7 @@ const material = [
   // MatBottomSheetModule,
   MatButtonModule,
   MatCardModule,
-  MatChipsModule,
+  // MatChipsModule,
   // MatDatepickerModule,
   MatDividerModule,
   // MatNativeDateModule,

@@ -1,14 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer mode="over" class="sidenav">
     <mat-toolbar>
-      <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
+      <button aria-label="Close menu" mat-icon-button matTooltip="Close menu" (click)="drawer.toggle()">
+        <mat-icon>close</mat-icon>
       </button>
-      <span style="margin-left: .5rem;">Go to section</span>
+      <a [href]="getBaseUrl()" class="temu-logo">TEMU</a>
     </mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
-      <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" (click)="drawer.close()">
+      <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" target="_self"
+        (click)="drawer.close()">
         {{ section.title }}
         <mat-divider></mat-divider>
       </a>
@@ -16,105 +17,115 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="mat-elevation-z4">
-      <button fxHide.gt-md aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      <button fxHide.gt-sm aria-label="Open menu" mat-icon-button matTooltip="Open menu" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
       <a [href]="getBaseUrl()" class="temu-logo">TEMU</a>
-      <span class="spacer"></span>
-      <mat-nav-list fxHide fxShow.gt-md fxLayout fxLayoutAlign="center center">
-        <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" class="header-links">
+      <mat-nav-list fxHide fxShow.gt-sm fxLayout fxLayoutAlign="center center">
+        <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" target="_self">
           {{ section.title }}
         </a>
       </mat-nav-list>
     </mat-toolbar>
-    <main class="main" ngClass.gt-sm="main-desktop">
-      <h1 class="heading"><span class="primary-color">Biomedical</span> Text Mining Unit</h1>
-      <p class="secondary-color">OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
-      <section class="section" fxLayout="column" fxLayout.gt-sm fxLayoutGap="1rem">
-        <mat-card fxFlex.gt-sm="50%" fxLayout="column" fxLayoutAlign="space-between">
-          <div>
-            <img src="assets/images/BSC-blue.svg" alt="BSC logo" class="hero-image">
-            <mat-card-content>
-              <p>
-                The Text Mining Unit (TEMU) at Barcelona Supercomputing Center (BSC) focuses on the application and
-                development of biomedical text mining technologies, which are becoming a key tool for the efficient
-                exploitation of information contained in unstructured data repositories including the scientific
-                literature, electronic health records (EHRs), patents, biobank metadata, clinical trials and social
-                media.
-              </p>
-              <p>
-                The unit has a particular interest in processing clinical documents written in Spanish and other
-                co-official languages in the area of health-related topics and the integration of molecular and
-                biological information derived from the literature.
-              </p>
-            </mat-card-content>
-          </div>
-          <mat-card-actions>
-            <a href="https://www.bsc.es/" class="animated-underline">Visit BSC website</a>
-          </mat-card-actions>
+    <main class="main animated-underline" ngClass.gt-sm="main-desktop">
+      <h1 class="h1"><span class="primary-color">Biomedical</span> Text Mining Unit</h1>
+      <p>OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
+      <div fxLayout="column" fxLayout.gt-sm fxLayoutGap="1em">
+        <mat-card fxFlex.gt-sm="50%">
+          <img mat-card-image src="assets/images/BSC-blue-small.png" alt="BSC logo">
+          <mat-card-content>
+            <p>
+              The Text Mining Unit (TEMU) at Barcelona Supercomputing Center (BSC) focuses on the application and
+              development of biomedical text mining technologies, which are becoming a key tool for the efficient
+              exploitation of information contained in unstructured data repositories including the scientific
+              literature, electronic health records (EHRs), patents, biobank metadata, clinical trials and social
+              media.
+            </p>
+            <p>
+              The unit has a particular interest in processing clinical documents written in Spanish and other
+              co-official languages in the area of health-related topics and the integration of molecular and
+              biological information derived from the literature.
+            </p>
+          </mat-card-content>
+          <mat-card-footer>
+            <a href="https://www.bsc.es/">Visit BSC website</a>
+          </mat-card-footer>
         </mat-card>
-        <mat-card fxFlex.gt-sm="50%" fxLayout="column" fxLayoutAlign="space-between">
-          <div>
-            <img src="assets/images/plantl.png" alt="Plan TL logo" class="hero-image">
-            <mat-card-content>The unit is fully funded through the
-              <span class="spanish">Plan de Impulso de las Tecnologías del Lenguaje de la Agenda Digital (Plan
-                TL)</span>
-              , in the framework of an agreement (known as <span class="spanish">encomienda</span>) between BSC and the
-              <span class="spanish">Ministerio de Asuntos Económicos y Transformación Digital</span>.
-            </mat-card-content>
-          </div>
-          <mat-card-actions>
-            <a href="https://www.plantl.gob.es/" class="animated-underline">Visit Plan TL website</a>
-          </mat-card-actions>
+        <mat-card fxFlex.gt-sm="50%">
+          <img mat-card-image src="assets/images/plantl.png" alt="Plan TL logo">
+          <mat-card-content>
+            <p>
+              The unit is fully funded through the <span class="spanish">Plan de Impulso de las Tecnologías del Lenguaje
+                de la Agenda Digital (Plan TL)</span>, in the framework of an agreement (known as <span
+                class="spanish">encomienda</span>) between BSC and the <span class="spanish">Ministerio de Asuntos
+                Económicos y Transformación Digital</span>.
+            </p>
+          </mat-card-content>
+          <mat-card-footer>
+            <a href="https://www.plantl.gob.es/">Visit Plan TL website</a>
+          </mat-card-footer>
         </mat-card>
+      </div>
+      <section class="section">
+        <p>The strategic goals of the Text Mining Unit are:</p>
+        <ul>
+          <li>
+            <mat-icon>check_circle_outline</mat-icon>
+            Design and develop biomedical language-processing resources with emphasis on oncology.
+          </li>
+          <li>
+            <mat-icon>check_circle_outline</mat-icon>
+            Provide consultancy and technical advice for language technologies in the biomedical domain.
+          </li>
+          <li>
+            <mat-icon>check_circle_outline</mat-icon>
+            Design requirements and standards for interoperability of biomedical language technologies.
+          </li>
+          <li>
+            <mat-icon>check_circle_outline</mat-icon>
+            Coordinate community assessment and evaluation challenges of biomedical text mining tasks.
+          </li>
+          <li>
+            <mat-icon>check_circle_outline</mat-icon>
+            Leverage the uptake of biomedical text mining technologies and relevant standards.
+          </li>
+        </ul>
+        <p>One of the main scopes of the unit is to provide biomedical text mining and language processing
+          infrastructures that can be maintained efficiently over time and be integrated in biomedical analysis
+          platforms comprising data from experimental outcomes of patient-derived information.</p>
       </section>
-      <section *ngFor="let section of sections" id="{{ section.id }}" class="section">
-        <h2 *ngIf="section.title" class="heading primary-color" fxLayoutAlign="start center">
-          <span>{{ section.title }}</span>
-          <a mat-icon-button href="#{{ section.id }}" class="heading-link"
-            [cdkCopyToClipboard]="getAnchorUrl(section.id)" matTooltip="Copy heading link" matTooltipPosition="above">
+      <section *ngFor="let section of sections" id="{{ section.id }}" fxLayout="column" fxLayoutAlign="center center">
+        <h2 *ngIf="section.title" class="h2">
+          <span>{{ section.title | uppercase }}</span>
+          <a mat-icon-button href="#{{ section.id }}" target="_self" class="anchor-link"
+            [cdkCopyToClipboard]="getAnchorUrl(section.id)" matTooltip="Copy anchor link" matTooltipPosition="above">
             <mat-icon>link</mat-icon>
           </a>
         </h2>
-        <p *ngIf="section.firstParagraph">{{ section.firstParagraph }}</p>
-        <ul *ngIf="section.bulletItems">
-          <li *ngFor="let bullet of section.bulletItems">
-            <mat-icon class="primary-color" style="font-size: 1.3em;">check_circle_outline</mat-icon>
-            <span>{{ bullet }}</span>
-          </li>
-        </ul>
-        <div *ngIf="section.items" fxLayout.gt-sm="row wrap" fxLayoutGap.gt-sm="1rem">
-          <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%" fxLayout="column"
-            fxLayoutAlign="space-between">
-            <div>
-              <mat-card-title>{{ item.title }}</mat-card-title>
-              <mat-chip-list aria-label="Flags">
-                <mat-chip *ngIf="item.flag">{{ item.flag }}</mat-chip>
-                <mat-chip *ngIf="item.date">{{ item.date | date }}</mat-chip>
-              </mat-chip-list>
-              <mat-card-content innerHTML="{{ item.description }}"></mat-card-content>
-            </div>
-            <mat-card-actions>
-              <a href="{{ item.href }}" class="animated-underline">{{ item.linkText }}</a>
-            </mat-card-actions>
+        <article fxLayout="column" fxLayout.gt-sm="row wrap" fxLayoutGap="1em" fxLayoutAlign="center">
+          <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%">
+            <span class="flag">{{ item.flag ? item.flag : item.date | date }}</span><a
+              href="{{ item.href }}">{{ item.linkText }}</a>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-subtitle innerHTML="{{ item.description }}"></mat-card-subtitle>
           </mat-card>
-          <br />
-          <a *ngIf="section.more" href="{{ section.more.href }}">Explore more</a>
-        </div>
-        <p *ngIf="section.lastParagraph">{{ section.lastParagraph }}</p>
+        </article>
+        <a *ngIf="section.exploreMore" href="{{ section.exploreMore.href }}"
+          class="explore-more">{{ section.exploreMore.linkText | uppercase }}</a>
       </section>
     </main>
-    <footer>
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" fxLayout.gt-sm="row wrap"
-        fxLayoutGap.gt-sm="3rem">
+    <footer class="footer">
+      <mat-divider></mat-divider>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5em" fxLayout.gt-sm="row wrap"
+        fxLayoutGap.gt-sm="3em" style="padding: 5em 0;">
         <a *ngFor="let link of links" href="{{ link.href }}" title="{{ link.title }}">
           <img src="{{ link.img.src }}" alt="{{ link.img.alt }}"
             [style.margin-left]="link.id === 'zenodo' ? '-1.5em' : '0'">
-          <mat-divider></mat-divider>
         </a>
       </div>
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem" style="margin-top: 3rem;">
-        <span>
+      <mat-divider></mat-divider>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5em" style="padding: 5em;">
+        <span class="animated-underline">
           This website was initially launched on December 2018 and redisigned with the
           <a href="https://material.io/">Material Design</a> guidelines later on June 2020 by
           <a href="https://github.com/aasensios">Alejandro Asensio</a>.

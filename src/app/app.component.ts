@@ -9,6 +9,7 @@ export class AppComponent {
 
   getBaseUrl = () => window.location.origin;
   getAnchorUrl = (sectionId: string) => `${window.location.origin}#${sectionId}`;
+  navigate = (url: string) => location.href = url;
 
   links = [
     {
@@ -16,7 +17,7 @@ export class AppComponent {
       href: 'https://www.bsc.es/',
       title: 'Barcelona Supercomputing Center',
       img: {
-        src: 'assets/images/BSC-blue.svg',
+        src: 'assets/images/BSC-blue-small.png',
         alt: 'BSC logo',
       }
     },
@@ -60,61 +61,48 @@ export class AppComponent {
 
   sections = [
     {
-      id: 'goals',
-      title: 'Goals',
-      firstParagraph: 'The strategic goals of the Text Mining Unit are:',
-      bulletItems: [
-        'Design and develop biomedical language-processing resources with emphasis on oncology.',
-        'Provide consultancy and technical advice for language technologies in the biomedical domain.',
-        'Design requirements and standards for interoperability of biomedical language technologies.',
-        'Coordinate community assessment and evaluation challenges of biomedical text mining tasks.',
-        'Leverage the uptake of biomedical text mining technologies and relevant standards.',
-      ],
-      lastParagraph: 'One of the main scopes of the unit is to provide biomedical text mining and language processing infrastructures that can be maintained efficiently over time and be integrated in biomedical analysis platforms comprising data from experimental outcomes of patient-derived information.',
-    },
-    {
       id: 'campaigns',
       title: 'Campaigns',
       items: [
         {
           title: 'BARR2',
           description: 'Biomedical Abbreviation Recognition and Resolution (2nd Edition)',
-          flag: 'Finished',
+          flag: 'Finished campaign',
           linkText: 'Visit the website',
           href: 'https://temu.bsc.es/BARR2/',
         },
         {
           title: 'CANTEMIST',
           description: 'Cancer Text Mining Shared Task – tumor named entity recognition',
-          flag: 'Finished',
+          flag: 'Finished campaign',
           linkText: 'Visit the website',
           href: 'https://temu.bsc.es/cantemist/',
         },
         {
           title: 'CODIESP',
           description: 'Clinical Case Coding in Spanish Shared Task (eHealth CLEF 2020)',
-          flag: 'Finished',
+          flag: 'Finished campaign',
           linkText: 'Visit the website',
           href: 'https://temu.bsc.es/codiesp/',
         },
         {
           title: 'MEDDOCAN',
           description: 'Medical Document Anonymization',
-          flag: 'Finished',
+          flag: 'Finished campaign',
           linkText: 'Visit the website',
           href: 'https://temu.bsc.es/meddocan/',
         },
         {
           title: 'MESINESP',
           description: 'Medical Semantic Indexing in Spanish',
-          flag: 'Finished',
+          flag: 'Finished campaign',
           linkText: 'Visit the website',
           href: 'https://temu.bsc.es/mesinesp/',
         },
         {
           title: 'PHARMACONER',
           description: 'Pharmacological Substances, Compounds and proteins and Named Entity Recognition',
-          flag: 'Finished',
+          flag: 'Finished campaign',
           linkText: 'Visit the website',
           href: 'https://temu.bsc.es/pharmaconer/',
         },
@@ -198,7 +186,10 @@ export class AppComponent {
           href: 'https://github.com/PlanTL-SANIDAD/SPACCC_POS',
         },
       ],
-      more: this.links.find(link => link.id === 'zenodo')
+      exploreMore: {
+        linkText: 'Explore more resources',
+        href: this.links.find(link => link.id === 'zenodo').href
+      }
     },
     {
       id: 'tools',
@@ -226,7 +217,10 @@ export class AppComponent {
           href: 'https://github.com/PlanTL-SANIDAD/AbreMES-X',
         },
       ],
-      more: this.links.find(link => link.id === 'github')
+      exploreMore: {
+        linkText: 'Explore more tools',
+        href: this.links.find(link => link.id === 'github').href
+      }
     },
     {
       id: 'events',
@@ -290,7 +284,7 @@ export class AppComponent {
       ]
     },
     {
-      id: 'more',
+      id: 'about',
       title: 'More about us',
       items: [
         {

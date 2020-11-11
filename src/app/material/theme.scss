@@ -45,7 +45,7 @@ $custom: map-get($my-app-theme, custom);
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
-  $font-family: '"Noto Sans", "Helvetica Neue", sans-serif',
+  $font-family: '"Roboto", sans-serif',
 );
 
 // Override the typography in the core CSS.

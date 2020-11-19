@@ -1,10 +1,10 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer mode="over" class="sidenav">
+<mat-sidenav-container>
+  <mat-sidenav #drawer mode="over">
     <mat-toolbar>
       <button aria-label="Close menu" mat-icon-button matTooltip="Close menu" (click)="drawer.toggle()">
         <mat-icon>close</mat-icon>
       </button>
-      <a [href]="getBaseUrl()" class="temu-logo">TEMU</a>
+      <a [href]="getBaseUrl()" target="_self" class="temu-logo">TEMU</a>
     </mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list>
@@ -20,17 +20,20 @@
       <button fxHide.gt-sm aria-label="Open menu" mat-icon-button matTooltip="Open menu" (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <a [href]="getBaseUrl()" class="temu-logo">TEMU</a>
+      <a [href]="getBaseUrl()" target="_self" class="temu-logo">TEMU</a>
       <mat-nav-list fxHide fxShow.gt-sm fxLayout fxLayoutAlign="center center">
         <a *ngFor="let section of sections" mat-list-item href="#{{ section.id }}" target="_self">
           {{ section.title }}
         </a>
       </mat-nav-list>
     </mat-toolbar>
-    <main class="main animated-underline" ngClass.gt-sm="main-desktop">
-      <h1 class="h1"><span class="primary-color">Biomedical</span> Text Mining Unit</h1>
-      <p>OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
-      <div fxLayout="column" fxLayout.gt-sm fxLayoutGap="1em">
+    <main class="main animated-underline" fxLayout="column" fxLayoutGap="1em" ngClass.gt-sm="main-medium"
+      ngClass.gt-md="main-large">
+      <div>
+        <h1 class="h1"><span class="accent-color">Biomedical</span> Text Mining Unit</h1>
+        <p>OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
+      </div>
+      <div fxLayout="column" fxLayout.gt-sm fxLayoutAlign="start start" fxLayoutGap="1em">
         <mat-card fxFlex.gt-sm="50%">
           <img mat-card-image src="assets/images/BSC-blue-small.png" alt="BSC logo">
           <mat-card-content>
@@ -102,10 +105,10 @@
             <mat-icon>link</mat-icon>
           </a>
         </h2>
-        <article fxLayout="column" fxLayout.gt-sm="row wrap" fxLayoutGap="1em" fxLayoutAlign="center">
+        <article fxLayout="column" fxLayout.gt-sm="row wrap" fxLayoutAlign="space-evenly">
           <mat-card *ngFor="let item of section.items" fxFlex.gt-sm="30%">
-            <span class="flag">{{ item.flag ? item.flag : item.date | date }}</span><a
-              href="{{ item.href }}">{{ item.linkText }}</a>
+            <span class="flag">{{ item.flag ? item.flag : item.date | date }}</span>
+            <a href="{{ item.href }}">{{ item.linkText }}</a>
             <mat-card-title>{{ item.title }}</mat-card-title>
             <mat-card-subtitle innerHTML="{{ item.description }}"></mat-card-subtitle>
           </mat-card>

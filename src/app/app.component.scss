@@ -1,103 +1,88 @@
 @import "~@angular/material/theming";
 
-$plantl-color: #298daf;
+$primary-color: #298daf;
+$accent-color: #e6b000;
 $secondary-color: #80868b;
 $almost-white: #f8f9fa;
 $mat-toolbar-height: 4em;
 
 .primary-color {
-  color: $plantl-color;
+  color: $primary-color;
+}
+.accent-color {
+  color: $accent-color;
 }
 .secondary-color {
   color: $secondary-color;
 }
-
-.sidenav-container {
-  height: 100%;
-}
-
-.sidenav {
-  width: 17rem;
-}
-
 .h1 {
   font-weight: 900;
   font-size: 2.25em;
   line-height: 1em;
 }
-
 .h2 {
   font-weight: 900;
   font-size: 1.5em;
   margin-top: $mat-toolbar-height;
-
   .anchor-link {
-    margin-left: .25em;
+    margin-left: 0.25em;
     visibility: hidden;
   }
-
   &:hover .anchor-link {
     color: inherit;
     visibility: visible;
   }
 }
-
 .temu-logo {
   color: $secondary-color;
   text-decoration: none;
   margin-left: 1em;
   margin-right: 5em;
 }
-
 .main {
   padding: $mat-toolbar-height 1.5rem;
 }
-
-.main-desktop {
+.main-medium {
+  padding: $mat-toolbar-height 10vw;
+}
+.main-large {
   padding: $mat-toolbar-height 20vw;
 }
-
 .section {
   padding-top: $mat-toolbar-height;
 }
-
 .spanish {
   font-style: italic;
 }
-
 .footer img {
   max-height: 6em;
   width: auto;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   filter: grayscale(100%);
 }
-
 .header-links {
   font-weight: bolder;
 }
-
 ul {
   list-style-type: none;
 
   li {
-    padding: .5em 0;
+    padding: 0.5em 0;
 
     mat-icon {
-      color: $plantl-color;
+      color: $primary-color;
       font-size: 1.4em;
     }
   }
 }
-
-
 .flag {
   font-weight: bolder;
-  color: $plantl-color;
+  color: $accent-color;
 
   &::after {
     content: "·";
     display: inline-block;
-    margin: 0 .5em;
+    margin: 0 0.5em;
     color: black;
   }
 }
@@ -105,16 +90,16 @@ ul {
 // https://stackoverflow.com/a/56839267
 .animated-underline a {
   text-decoration: none;
-  color: $plantl-color;
+  color: $primary-color;
   display: inline-block;
 }
 .animated-underline a::after {
   content: "";
   width: 0;
   height: 2px;
-  background-color: $plantl-color;
+  background-color: $primary-color;
   display: block;
-  transition: width .5s ease;
+  transition: width 0.5s ease;
 }
 .animated-underline a:hover::after,
 .animated-underline a:focus::after {
@@ -123,61 +108,56 @@ ul {
 
 .explore-more {
   padding: 1.5em;
-
   &:hover {
     @include mat-elevation(4);
   }
 }
 
 // Override defaults of Angular Material classes
-
+.mat-sidenav-container {
+  height: 100vh;
+}
+.mat-sidenav {
+  width: 17rem;
+}
 .mat-toolbar {
   position: sticky;
   top: 0;
   z-index: 1;
   background-color: white;
 }
-
 .mat-list-base {
   padding-top: 0;
 }
-
 .mat-drawer-container {
   background-color: white;
 }
-
 .mat-card {
-  border-radius: .5em;
+  border-radius: 0.5em;
   margin: 1rem 0;
-
   // @include mat-elevation(0);
-
   &:hover {
     @include mat-elevation(4);
   }
-
   .mat-card-title {
     font-weight: 300;
     line-height: 1.125em;
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
-
   .mat-card-image {
     padding: 1em;
     max-height: 6em;
     width: auto;
     max-width: 100%;
   }
-
   .mat-card-footer {
     padding: 1em;
   }
 }
-
 .mat-chip {
   color: #666666;
   padding: 0 4px;
   border-radius: 4px;
   min-height: 21px;
-  font-size: .9em;
+  font-size: 0.9em;
 }

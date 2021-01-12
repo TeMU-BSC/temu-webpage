@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -215,6 +215,13 @@ export class AppComponent {
           flag: 'Other tools',
           linkText: 'Go to the repo',
           href: 'https://github.com/PlanTL-SANIDAD/AbreMES-X',
+        },
+        {
+          title: 'My Miner',
+          description: 'Simple binary classification web tool.',
+          flag: 'Other tools',
+          linkText: 'Use the tool',
+          href: 'https://temu.bsc.es/myminer/',
         },
       ],
       exploreMore: {

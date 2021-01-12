@@ -7,29 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "style": "scss"
         }
       },
       "root": "",
@@ -50,8 +28,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/app/material/theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -67,7 +43,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -116,8 +91,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/app/material/theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -151,8 +124,5 @@
       }
     }
   },
-  "defaultProject": "temu-webpage",
-  "cli": {
-    "analytics": false
-  }
+  "defaultProject": "temu-webpage"
 }

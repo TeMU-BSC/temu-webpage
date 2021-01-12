@@ -56,6 +56,9 @@ $mat-toolbar-height: 4em;
   width: auto;
   margin: 0.5rem 0;
   filter: grayscale(100%);
+  &:hover {
+    filter: unset;
+  }
 }
 .header-links {
   font-weight: bolder;

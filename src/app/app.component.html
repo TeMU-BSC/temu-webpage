@@ -30,8 +30,14 @@
     <main class="main animated-underline" fxLayout="column" fxLayoutGap="1em" ngClass.gt-sm="main-medium"
       ngClass.gt-md="main-large">
       <div>
-        <h1 class="h1"><span class="accent-color">Biomedical</span> Text Mining Unit</h1>
-        <p>OTG Sanidad | Secretaría de Estado para la Agenda Digital</p>
+        <h1 class="h1"><span class="plantl-color">Biomedical</span> Text Mining Unit</h1>
+        <p>
+          <i>
+            Oficina Técnica de Gestión (OTG) de Sanidad
+            <br>
+            Secretaría de Estado para la Agenda Digital (SEAD)
+          </i>
+        </p>
       </div>
       <div fxLayout="column" fxLayout.gt-sm fxLayoutAlign="start start" fxLayoutGap="1em">
         <mat-card fxFlex.gt-sm="50%">
@@ -113,8 +119,8 @@
             <mat-card-subtitle innerHTML="{{ item.description }}"></mat-card-subtitle>
           </mat-card>
         </article>
-        <a *ngIf="section.exploreMore" href="{{ section.exploreMore.href }}"
-          class="explore-more">{{ section.exploreMore.linkText | uppercase }}</a>
+        <a *ngIf="section.exploreMore" href="{{ section.exploreMore.href }}" class="explore-more">{{
+          section.exploreMore.linkText | uppercase }}</a>
       </section>
     </main>
     <footer class="footer">

@@ -1,16 +1,13 @@
 @import "~@angular/material/theming";
 
-$primary-color: #298daf;
-$accent-color: #e6b000;
+$bsc-color: #1f3970;
+$plantl-color: #308daf;
 $secondary-color: #80868b;
 $almost-white: #f8f9fa;
 $mat-toolbar-height: 4em;
 
-.primary-color {
-  color: $primary-color;
-}
-.accent-color {
-  color: $accent-color;
+.plantl-color {
+  color: $plantl-color;
 }
 .secondary-color {
   color: $secondary-color;
@@ -70,14 +67,14 @@ ul {
     padding: 0.5em 0;
 
     mat-icon {
-      color: $primary-color;
+      color: $plantl-color;
       font-size: 1.4em;
     }
   }
 }
 .flag {
   font-weight: bolder;
-  color: $accent-color;
+  color: $plantl-color;
 
   &::after {
     content: "·";
@@ -90,14 +87,14 @@ ul {
 // https://stackoverflow.com/a/56839267
 .animated-underline a {
   text-decoration: none;
-  color: $primary-color;
+  color: $plantl-color;
   display: inline-block;
 }
 .animated-underline a::after {
   content: "";
   width: 0;
   height: 2px;
-  background-color: $primary-color;
+  background-color: $plantl-color;
   display: block;
   transition: width 0.5s ease;
 }
@@ -107,6 +104,7 @@ ul {
 }
 
 .explore-more {
+  // color: $accent-color;
   padding: 1.5em;
   &:hover {
     @include mat-elevation(4);
